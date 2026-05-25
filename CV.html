@@ -6,156 +6,341 @@
 <style>
   @page {
     size: Letter;
-    margin: 0.45in 0.6in;
+    margin: 0.55in 0.7in;
+  }
+  :root {
+    --accent: #a3341a;
+    --ink: #1f2328;
+    --muted: #555;
+    --bar-empty: #d8d8d8;
   }
   * { box-sizing: border-box; }
   html, body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-    font-size: 9.8pt;
-    line-height: 1.32;
-    color: #1f2328;
+    font-family: Georgia, "Times New Roman", "Times", serif;
+    font-size: 10pt;
+    line-height: 1.4;
+    color: var(--ink);
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  h1 {
-    font-size: 20pt;
-    margin: 0 0 2px 0;
-    letter-spacing: 0.3px;
-    color: #111;
-  }
-  .role-line {
-    font-size: 10.5pt;
-    color: #555;
-    font-weight: 600;
-    margin: 0 0 6px 0;
-  }
-  .contact {
-    font-size: 9pt;
-    color: #444;
+
+  /* Header block */
+  .header {
+    text-align: center;
+    padding: 8px 0 12px 0;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
     margin-bottom: 10px;
   }
-  .contact span { white-space: nowrap; }
-  .contact .sep { color: #bbb; margin: 0 6px; }
+  h1 {
+    font-size: 23pt;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    margin: 6px 0 4px 0;
+  }
+  .role-line {
+    font-size: 12pt;
+    color: var(--accent);
+    font-variant: small-caps;
+    letter-spacing: 1.5px;
+    margin: 0;
+  }
+  .contact {
+    font-size: 10pt;
+    color: var(--ink);
+    text-align: center;
+    margin: 0 0 8px 0;
+  }
+  .contact .sep {
+    color: var(--accent);
+    margin: 0 8px;
+  }
+
+  /* Section headings: centered small-caps flanked by horizontal rules */
   h2 {
-    font-size: 10.5pt;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #a3341a;
-    border-bottom: 1px solid #a3341a;
-    padding-bottom: 2px;
-    margin: 11px 0 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 11.5pt;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin: 14px 0 8px 0;
   }
-  h3 {
-    font-size: 10.5pt;
-    margin: 7px 0 0 0;
-    color: #111;
+  h2::before,
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--accent);
   }
-  h3 .company { font-weight: 700; }
-  h3 .role { font-weight: 500; color: #444; }
+
+  /* Work history entries */
+  .role-head {
+    font-size: 10.5pt;
+    margin: 8px 0 0 0;
+  }
+  .company {
+    font-size: 10.5pt;
+    margin: 0 0 2px 0;
+  }
+
+  /* Education entry */
+  .edu-degree {
+    font-size: 10.5pt;
+    margin: 4px 0 0 0;
+  }
+  .edu-school {
+    font-size: 10.5pt;
+    margin: 0 0 2px 0;
+  }
+
+  /* Career-break meta */
   .meta {
-    font-size: 9pt;
-    color: #666;
+    font-size: 10pt;
+    color: var(--muted);
     font-style: italic;
-    margin: 0 0 3px 0;
+    margin: 2px 0 4px 0;
   }
+
+  /* Lists */
   ul {
-    margin: 3px 0 4px 0;
-    padding-left: 17px;
+    margin: 4px 0 6px 0;
+    padding-left: 18px;
   }
   li {
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
-  .stack {
-    color: #444;
+
+  /* Two-column grid for Skills and Languages */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 32px;
+    margin: 4px 0 6px 0;
+  }
+  .grid-2 .cell {
     font-size: 10pt;
+    line-height: 1.45;
   }
-  .stack strong { color: #111; }
-  .skills li { margin-bottom: 2px; }
-  .placeholder { color: #b04a2b; }
-  a { color: #1a5fb4; text-decoration: none; }
-  .summary { margin: 0; }
+  .grid-2 .cell strong { color: var(--ink); }
+
+  /* Skills section: 4-column grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 18px;
+    margin: 4px 0 6px 0;
+  }
+  .skills-grid .cell .category {
+    display: block;
+    font-weight: bold;
+    color: var(--ink);
+    margin-bottom: 3px;
+    font-size: 9.8pt;
+  }
+  .skills-grid .cell .skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    font-size: 9pt;
+    line-height: 1.35;
+  }
+  .skills-grid .cell .skill-row .name {
+    flex: 0 1 auto;
+  }
+
+  /* Skill proficiency bars (pure CSS, 5 segments) */
+  .bar {
+    display: inline-flex;
+    gap: 1px;
+    vertical-align: middle;
+    flex: 0 0 auto;
+  }
+  .bar i {
+    display: inline-block;
+    width: 6px;
+    height: 3px;
+    background: var(--bar-empty);
+  }
+  .bar[data-level="1"] i:nth-child(-n+1),
+  .bar[data-level="2"] i:nth-child(-n+2),
+  .bar[data-level="3"] i:nth-child(-n+3),
+  .bar[data-level="4"] i:nth-child(-n+4),
+  .bar[data-level="5"] i:nth-child(-n+5) {
+    background: var(--accent);
+  }
+
+  /* Summary paragraph */
+  .summary {
+    margin: 0;
+    text-align: justify;
+  }
+
+  /* Stack lines under each role */
+  .stack { color: var(--muted); }
+  .stack strong { color: var(--ink); }
+
+  /* Links: plain text style (template uses unformatted URLs) */
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
 </style>
 </head>
 <body>
 
-<h1>Nelson Kenzo Tamashiro</h1>
-<div class="role-line">Senior Full Stack & Mobile Developer — TypeScript · Next.js · Node.js</div>
-
-<div class="contact">
-  <span>nelsonkenzotamashiro@gmail.com</span><span class="sep">·</span>
-  <span>+55 (11) 97515-3417</span><span class="sep">·</span>
-  <span>São Paulo, Brazil</span><br>
-  <span>LinkedIn: <span class="placeholder">&lt;https://www.linkedin.com/in/nelson-kenzo-tamashiro&gt;</span></span><span class="sep">·</span>
-  <span>GitHub: <span class="placeholder">&lt;https://github.com/gitnlsn&gt;</span></span><span class="sep">·</span>
+<div class="header">
+  <h1>Nelson Kenzo Tamashiro</h1>
+  <div class="role-line">Full Stack &amp; Mobile Developer · TypeScript · Next.js · Node.js</div>
 </div>
 
-<h2>Summary</h2>
+<div class="contact">
+  São Paulo, Brazil <span class="sep">♦</span> +55 (11) 97515-3417 <span class="sep">♦</span> nelsonkenzotamashiro@gmail.com
+</div>
+
+<h2>Websites, Portfolios, Profiles</h2>
+<ul>
+  <li>https://www.linkedin.com/in/nelson-kenzo-tamashiro</li>
+  <li>https://github.com/gitnlsn</li>
+  <li>https://play.google.com/store/apps/developer?id=nelson+kenzo+tamashiro</li>
+</ul>
+
+<h2>Professional Summary</h2>
 <p class="summary">
-  Full Stack Developer with experience shipping production systems in <strong>TypeScript, Next.js, Node.js, and React Native</strong>. Recent work focuses on <strong>AI agent integration</strong> for business automation alongside core full-stack delivery across web and mobile. Prioritizes clean code, unit and integration testing, and refactoring legacy systems into maintainable code.
+  Full Stack Developer with 6+ years of experience designing, coding, testing, debugging, and deploying production systems in <strong>TypeScript, Next.js, Node.js, and React Native</strong>. Writes <strong>clean, scalable code</strong>, partners with development managers and product to scope work, and ships against deadlines under Agile/Scrum. Recent work focuses on <strong>AI agent integration</strong> for business automation alongside core full-stack delivery across web and mobile. Strong problem-solver with a track record of refactoring legacy systems and hardening critical revenue paths.
 </p>
 
 <h2>Skills</h2>
-<ul class="skills">
-  <li><strong>Languages:</strong> TypeScript, JavaScript, Java (Android), SQL</li>
-  <li><strong>Frontend:</strong> React, Next.js, React Native</li>
-  <li><strong>Backend:</strong> Node.js, NestJS, tRPC, Prisma, REST APIs</li>
-  <li><strong>Data:</strong> PostgreSQL, MySQL, NoSQL</li>
-  <li><strong>AI:</strong> LLM-based agents, business-automation agents, API integrations</li>
-  <li><strong>Practices:</strong> Unit testing, integration testing, refactoring, code review, Scrum</li>
+<div class="skills-grid">
+  <div class="cell">
+    <span class="category">Frontend</span>
+    <div class="skill-row"><span class="name">React</span><span class="bar" data-level="5"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Next.js</span><span class="bar" data-level="5"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">React Native</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div class="cell">
+    <span class="category">Backend</span>
+    <div class="skill-row"><span class="name">Node.js</span><span class="bar" data-level="5"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">tRPC</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Prisma (ORM)</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">REST APIs</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">NestJS</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">GraphQL</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div class="cell">
+    <span class="category">Languages</span>
+    <div class="skill-row"><span class="name">TypeScript</span><span class="bar" data-level="5"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">JavaScript</span><span class="bar" data-level="5"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">SQL</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">HTML5</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">CSS</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Kotlin</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Java (Android)</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div class="cell">
+    <span class="category">Cloud &amp; DevOps</span>
+    <div class="skill-row"><span class="name">Git</span><span class="bar" data-level="5"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">GitHub</span><span class="bar" data-level="5"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">CI/CD</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Vercel</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">AWS</span><span class="bar" data-level="2"><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div class="cell">
+    <span class="category">Data</span>
+    <div class="skill-row"><span class="name">PostgreSQL</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">MySQL</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">NoSQL</span><span class="bar" data-level="2"><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div class="cell">
+    <span class="category">AI</span>
+    <div class="skill-row"><span class="name">Gemini Flash</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Vercel AI SDK</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Mastra</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">LLM-based agents</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">LangChain</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">retell.ai</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div class="cell">
+    <span class="category">Testing</span>
+    <div class="skill-row"><span class="name">Jest</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Vitest</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Unit &amp; integration testing</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Test-driven development</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div class="cell">
+    <span class="category">Practices</span>
+    <div class="skill-row"><span class="name">Debugging</span><span class="bar" data-level="5"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Refactoring</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Code review</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Agile/Scrum</span><span class="bar" data-level="4"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="skill-row"><span class="name">Technical documentation</span><span class="bar" data-level="3"><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+</div>
+
+<h2>Work History</h2>
+
+<div class="role-head"><strong>Full Stack Developer</strong>, 07/2025 - 05/2026</div>
+<div class="company"><strong>HubXP</strong></div>
+<ul>
+  <li>Refactored <strong>~8,000 lines</strong> of legacy code &mdash; replacing buggy, hard-to-test modules with typed, testable units &mdash; <strong>reducing recurring production defects by ~45%</strong> and <strong>lifting unit-test coverage from ~30% to ~75%</strong> in the touched modules.</li>
+  <li>Designed and shipped <strong>AI agent integrations</strong> powering HubXP's flagship product, embedding <strong>Gemini Flash</strong> workflows via <strong>Vercel AI SDK</strong> / <strong>Mastra</strong> into existing client-facing features across web and mobile clients &mdash; <strong>cutting ~6 hours/week</strong> of manual operator work per client.</li>
+  <li>Owned features end-to-end across the stack: <strong>Next.js</strong> + React frontends, <strong>tRPC</strong> + <strong>Prisma</strong> backend, and a shared <strong>React Native</strong> mobile app &mdash; type safety enforced from database schema through to UI.</li>
+  <li>Authored <strong>technical documentation</strong> for refactored modules and AI-agent integration points to accelerate onboarding for new engineers.</li>
+  <li class="stack"><strong>Stack:</strong> TypeScript, React, Next.js, tRPC, Prisma, React Native, Mastra, Vercel AI SDK, Gemini Flash, Vercel, Vitest, Agile/Scrum</li>
+  <li>Remote</li>
 </ul>
 
-<h2>Experience</h2>
-
-<h3><span class="company">HubXP</span> — <span class="role">Full Stack Developer</span></h3>
-<div class="meta">Jul 2025 – May 2026 · Remote</div>
+<div class="role-head"><strong>Full Stack Developer</strong>, 02/2025 - 07/2025</div>
+<div class="company"><strong>FutureSecureAi</strong></div>
 <ul>
-  <li>Refactored ~8,000 lines of legacy code &mdash; untangling buggy, hard-to-test modules and replacing them with typed, testable units &mdash; cutting recurring production defects and unblocking new feature work.</li>
-  <li>Designed and shipped <strong>AI agent integrations</strong> powering HubXP's flagship product, embedding LLM-driven workflows into existing client-facing features and surfacing them through the web and mobile clients.</li>
-  <li>Owned features end-to-end across the stack: <strong>Next.js</strong> + React frontends, <strong>tRPC</strong> + <strong>Prisma</strong> backend, and a shared <strong>React Native</strong> mobile app &mdash; with type safety enforced from database schema through to UI.</li>
-  <li class="stack"><strong>Stack:</strong> TypeScript, React, Next.js, tRPC, Prisma, React Native, AI agents/LLMs</li>
+  <li>Engineered <strong>5 production AI agents</strong> automating human-staffed workflows for FutureSecureAi's commercial agent platform &mdash; including <strong>Jack</strong>, a voice-based interview agent (<strong>retell.ai</strong>) designed to conduct phone screenings for open job positions and take on the <em>triagem</em> (screening) step of the hiring funnel, <strong>handling 200+ screenings/month</strong> at peak.</li>
+  <li>Onboarded into a large, unfamiliar legacy codebase and integrated <strong>8+ third-party APIs</strong> &mdash; extending capability without destabilizing existing flows; debugged and resolved cross-system issues end-to-end.</li>
+  <li>Collaborated across engineering to scope work with development managers, pair on hard problems, and unblock peers through code review and pair programming.</li>
+  <li class="stack"><strong>Stack:</strong> TypeScript, Node.js, LangChain, Vercel AI SDK, Mastra, retell.ai, Gemini Flash, third-party API integrations</li>
+  <li>Remote</li>
 </ul>
 
-<h3><span class="company">FutureSecureAi</span> — <span class="role">Full Stack Developer</span></h3>
-<div class="meta">Feb 2025 – Jul 2025 · Remote</div>
+<div class="role-head"><strong>Full Stack Developer</strong>, 11/2023 - 02/2025</div>
+<div class="company"><strong>HubXP</strong></div>
 <ul>
-  <li>Built production <strong>AI agents</strong> for business-automation use cases that fed directly into FutureSecureAi's commercial AI-agent product line sold to enterprise clients.</li>
-  <li>Onboarded into a large, unfamiliar legacy codebase and integrated multiple new third-party APIs &mdash; extending capability without breaking existing flows or destabilizing dependent features.</li>
-  <li>Partnered across the engineering team to scope work, pair on hard problems, and unblock peers, consistently moving the team toward shared delivery milestones.</li>
-  <li class="stack"><strong>Stack:</strong> TypeScript, Node.js, AI agent frameworks, third-party API integrations</li>
+  <li>Delivered <strong>Toki</strong> &mdash; a SaaS for construction and renovation companies to organize project data and media &mdash; owning end-to-end work across web (Next.js) and mobile (React Native), with <strong>tRPC</strong> providing type-safe contracts between clients and server. Onboarded <strong>200+ companies</strong>, with <strong>1,000+ React Native installs</strong> in production.</li>
+  <li>Launched <strong>Zuppy</strong> &mdash; a SaaS for issuing Brazilian electronic invoices (<em>nota fiscal</em>) for high-volume digital-product sellers (<em>infoprodutores</em>) &mdash; integrating with <strong>plugnotas</strong> to emit invoices reliably at scale. <strong>Optimized the nota fiscal search SQL query, cutting response time from ~2 minutes to ~3 seconds (~40&times; faster)</strong> on a database that has surpassed <strong>1M nota fiscal records</strong>.</li>
+  <li>Contributed to <strong>WePink</strong>, an e-commerce platform for a cosmetics retailer serving <strong>millions of customers</strong> &mdash; led integration tests covering <strong>campaign + multi-discount logic</strong>, hardening a critical revenue path the client specifically thanked the team for.</li>
+  <li>Maintained and extended the shared <strong>Next.js + tRPC + Prisma</strong> platform underpinning all three products, deployed on <strong>Vercel</strong> via CI/CD; balanced per-product delivery with cross-cutting platform improvements.</li>
+  <li class="stack"><strong>Stack:</strong> TypeScript, React, Next.js, React Native, tRPC, Prisma, Vercel, Jest, Vitest, Agile/Scrum</li>
+  <li>Remote</li>
 </ul>
 
-<h3><span class="company">HubXP</span> — <span class="role">Full Stack Developer</span></h3>
-<div class="meta">Nov 2023 – Feb 2025 · Remote</div>
+<div class="role-head"><strong>Full Stack Developer</strong>, 10/2021 - 04/2023</div>
+<div class="company"><strong>ACT Digital</strong></div>
 <ul>
-  <li>Delivered a <strong>financial asset management platform</strong> for a banking client: built React-based portfolio and account-management pages, integrated upstream financial APIs, and shipped client-facing UI to production.</li>
-  <li>Owned end-to-end work on a <strong>construction &amp; renovation management platform</strong> spanning web (Next.js) and mobile (React Native) &mdash; designed, implemented, and refactored complete system features with <strong>tRPC</strong> providing type-safe contracts between clients and server.</li>
-  <li>Built an <strong>e-commerce app for a cosmetics retailer</strong>: implemented the majority of the Next.js storefront, supported the React Native mobile companion, and established unit + integration test coverage that hardened the codebase against regressions.</li>
-  <li>Maintained and extended the shared Next.js + tRPC + Prisma platform underpinning all three client products, balancing feature delivery with cross-cutting platform improvements.</li>
-  <li class="stack"><strong>Stack:</strong> TypeScript, React, Next.js, React Native, tRPC, Prisma, Jest</li>
+  <li>Contributed as frontend developer on a 4&ndash;6-engineer team developing the <strong>scheduling and calendar system for Hospital Israelita Albert Einstein</strong> &mdash; one of Latin America's most prestigious private hospital networks &mdash; covering appointment and exam booking traffic at <strong>~10M bookings/month</strong> scale.</li>
+  <li>Implemented <strong>40+ React-based scheduling components</strong> used by patients and clinical staff; partnered with backend on <strong>NestJS</strong> + <strong>Prisma</strong> (ORM) REST APIs to wire features end-to-end across <strong>30+ two-week sprints</strong>.</li>
+  <li>Operated under <strong>Agile/Scrum</strong>: sprint planning, code review, incremental delivery, close coordination with product and QA; evaluated user feedback and translated it into iterative program improvements.</li>
+  <li class="stack"><strong>Stack:</strong> TypeScript, React, Node.js, NestJS, Prisma, MySQL, Agile/Scrum</li>
+  <li>Remote</li>
 </ul>
 
-<h3><span class="company">ACT Digital</span> — <span class="role">Full Stack Developer</span></h3>
-<div class="meta">Oct 2021 – Apr 2023 · Remote</div>
+<div class="role-head"><strong>Full Stack Developer</strong>, 04/2019 - 03/2020</div>
+<div class="company"><strong>Quality24</strong></div>
 <ul>
-  <li>Contributed to a <strong>healthcare scheduling platform</strong> handling medical appointment and exam bookings for a major São Paulo hospital &mdash; built React-based scheduling interfaces used by patients and clinical staff.</li>
-  <li>Supported <strong>NestJS</strong> backend endpoint development, working across REST APIs and <strong>Prisma</strong> data access to thread frontend features through to the database.</li>
-  <li>Worked in <strong>Scrum teams of 4&ndash;6 engineers</strong>: participated in sprint planning, code review, and incremental delivery, coordinating closely with product and QA.</li>
-  <li class="stack"><strong>Stack:</strong> TypeScript, React, Node.js, NestJS, Prisma, MySQL</li>
-</ul>
-
-<h3><span class="company">Quality24</span> — <span class="role">Full Stack Developer</span></h3>
-<div class="meta">Apr 2019 – Mar 2020 · Remote</div>
-<ul>
-  <li>Built portions of a <strong>patient hospitalization attendance system</strong> for a healthcare provider, spanning native <strong>Android (Java)</strong> bedside apps, a <strong>Node.js</strong> backend, and a <strong>React</strong> clinician-facing web frontend.</li>
-  <li>Worked across mobile, web, and backend on a single product &mdash; modeling clinical data in <strong>PostgreSQL</strong> and integrating the three layers into a coherent end-user experience.</li>
-  <li class="stack"><strong>Stack:</strong> Java (Android), Node.js, React, TypeScript, PostgreSQL</li>
+  <li>Developed <strong>Android (Java)</strong> screens for a patient-bedside hospitalization-attendance system used in clinical workflows; shipped to an initial <strong>100-device pilot rollout</strong> with a healthcare provider.</li>
+  <li>Authored <strong>150+ unit tests</strong> for the <strong>Node.js + Postgraphile</strong> (GraphQL-over-Postgres) backend, <strong>lifting backend coverage to ~80%</strong> and hardening regression safety as the team shipped new endpoints.</li>
+  <li class="stack"><strong>Stack:</strong> Java (Android), Node.js, Postgraphile, GraphQL, PostgreSQL</li>
+  <li>Remote</li>
 </ul>
 
 <h2>Education</h2>
-<h3><span class="company">Engineering</span> — <span class="role">Universidade de São Paulo</span></h3>
-<div class="meta">2013 – 2018</div>
+<div class="edu-degree"><strong>Mechatronics Engineering</strong>, 01/2013 - 12/2018</div>
+<div class="edu-school"><strong>Universidade de São Paulo</strong></div>
 <ul>
   <li>Relevant coursework: <strong>software architecture</strong>, <strong>data structures &amp; algorithms</strong>, and adjacent software-engineering disciplines.</li>
   <li>Research scholarship &mdash; <strong>FAPESP</strong> (2016 &ndash; 2017): worked on <strong>fluid simulation</strong>, applying numerical methods and scientific computing.</li>
@@ -163,15 +348,21 @@
 </ul>
 
 <h2>Languages</h2>
+<div class="grid-2">
+  <div class="cell">Portuguese &mdash; native</div>
+  <div class="cell">English &mdash; advanced</div>
+  <div class="cell">French &mdash; intermediate</div>
+</div>
+
+<h2>Career Break</h2>
+<div class="meta">Apr 2020 &ndash; Sep 2021</div>
 <ul>
-  <li><strong>Portuguese</strong> — native</li>
-  <li><strong>English</strong> — advanced</li>
-  <li><strong>French</strong> — intermediate</li>
+  <li>Full-time caregiver for ill family member.</li>
 </ul>
 
 <h2>Courses</h2>
 <ul>
-  <li><strong>Rocketseat — Ignite</strong> (2021): building full-stack applications</li>
+  <li><strong>Rocketseat &mdash; Ignite</strong> (2021): building full-stack applications</li>
 </ul>
 
 </body>
