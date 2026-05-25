@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nelson Kenzo Tamashiro • Full Stack &amp; AI Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#002a78",
+                        "primary-fixed": "#dbe1ff",
+                        "secondary-container": "#3f465c",
+                        "surface-tint": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "surface-container-lowest": "#0b0f10",
+                        "inverse-on-surface": "#2d3133",
+                        "outline": "#8d90a0",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#dae2fd",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-bright": "#363a3b",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#191c1e",
+                        "on-surface": "#e0e3e5",
+                        "surface-container-highest": "#323537",
+                        "on-background": "#e0e3e5",
+                        "surface": "#101415",
+                        "on-tertiary-container": "#ecf1ff",
+                        "surface-container": "#1d2022",
+                        "tertiary-fixed": "#d8e3fb",
+                        "tertiary-container": "#636e83",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#0053db",
+                        "primary-container": "#2563eb",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#283044",
+                        "outline-variant": "#434655",
+                        "tertiary": "#bcc7de",
+                        "secondary": "#bec6e0",
+                        "primary": "#b4c5ff",
+                        "inverse-surface": "#e0e3e5",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c3c6d7",
+                        "on-secondary-container": "#adb4ce",
+                        "on-tertiary": "#263143",
+                        "surface-container-high": "#272a2c",
+                        "on-tertiary-fixed": "#111c2d",
+                        "background": "#101415",
+                        "on-primary-container": "#eeefff",
+                        "surface-dim": "#101415",
+                        "surface-variant": "#323537",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "tertiary-fixed-dim": "#bcc7de"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-desktop": "120px",
+                        "section-gap-mobile": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "card-padding": "32px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "display-xl": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "mono-label": ["JetBrains Mono"],
+                        "mono-code": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "mono-label": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "mono-code": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(30, 41, 59, 0.5);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(180, 197, 255, 0.4);
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #434655, transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30 scroll-smooth">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-surface/60 border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<div class="text-body-lg font-headline-md font-bold text-on-surface dark:text-on-surface tracking-tighter">NKT</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#about">About</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#projects">Projects</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#experience">Experience</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#skills">Skills</a>
+<a class="text-primary font-bold font-body-md hover:text-primary transition-colors duration-200" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-variant border border-outline-variant/30">
+<img alt="Nelson Kenzo Tamashiro Profile Picture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeP0KEx8TQ7YjO6J_iLTIF-Ps58nZ6HB-gSq9hjTwH8qUxvR08iJEQrSZMQotU9hFIr0C_MzvDyHhiaaajPfE5CS0jLNKJiaKC7EhlB5iWw5EPsR_Kr9n1jVBhin_CM2SngWYQWeKT8IDyZQnuPOiGTOl80LEJ4bFiTq35LAUAGxN_ryGTgXlYypZNMBrQrTHKBOlT-mte1yKKLmBEc5pLDUy2HGrRnRL4JbnIn0MVxlG1v-orMYbn-MoBqU7s8zXGggXNwsASkg"/>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile mb-section-gap-mobile md:mb-section-gap-desktop">
+<div class="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-12">
+<div class="flex-1 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="text-mono-label font-mono-label text-primary-fixed uppercase tracking-widest">Open to remote opportunities</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-display-xl text-headline-lg-mobile md:text-display-xl text-on-surface mb-6">
+                        Hi, I'm <span class="text-primary text-glow">Nelson.</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
+                        I build production web and mobile systems with <span class="text-primary font-bold">TypeScript, Next.js, Node.js, and React Native</span> — lately with a focus on AI-agent integration for business automation.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<a class="w-full sm:w-auto px-8 py-4 bg-primary text-on-primary rounded-lg font-headline-md font-bold transition-transform hover:scale-[1.02] active:opacity-80" href="#">Download CV (PDF)</a>
+<a class="w-full sm:w-auto px-8 py-4 border border-outline-variant/30 text-on-surface rounded-lg font-headline-md font-bold hover:bg-surface-variant/50 transition-colors" href="#contact">Get in touch</a>
+</div>
+</div>
+<div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-surface-container-highest shadow-2xl relative group">
+<img alt="Nelson Kenzo Tamashiro" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeP0KEx8TQ7YjO6J_iLTIF-Ps58nZ6HB-gSq9hjTwH8qUxvR08iJEQrSZMQotU9hFIr0C_MzvDyHhiaaajPfE5CS0jLNKJiaKC7EhlB5iWw5EPsR_Kr9n1jVBhin_CM2SngWYQWeKT8IDyZQnuPOiGTOl80LEJ4bFiTq35LAUAGxN_ryGTgXlYypZNMBrQrTHKBOlT-mte1yKKLmBEc5pLDUy2HGrRnRL4JbnIn0MVxlG1v-orMYbn-MoBqU7s8zXGggXNwsASkg"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+</section>
+<div class="section-divider mb-section-gap-mobile"></div>
+<!-- About Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile mb-section-gap-mobile md:mb-section-gap-desktop" id="about">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-[2px] w-12 bg-primary"></div>
+<h2 class="text-headline-md font-headline-md text-on-surface">About</h2>
+</div>
+<div class="grid md:grid-cols-12 gap-12">
+<div class="md:col-span-8 space-y-6">
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                        Full Stack Developer with <span class="text-on-surface font-bold">6+ years shipping production systems</span> across web and mobile. I prioritize clean, scalable code, integration testing, and refactoring legacy systems into maintainable shape. My recent focus is integrating LLM-based agents into client-facing products — Gemini Flash workflows via the Vercel AI SDK and Mastra.
+                    </p>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                        Based in <span class="text-on-surface font-bold">São Paulo, Brazil</span>. I work remote-first and have collaborated with teams across LATAM and Europe. I'm comfortable owning features end-to-end, from database schema through API to UI, on both web and native mobile clients.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile mb-section-gap-mobile md:mb-section-gap-desktop" id="projects">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-[2px] w-12 bg-primary"></div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Personal Projects</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-2 gap-gutter">
+<!-- Project 1 -->
+<div class="group glass-card rounded-xl overflow-hidden transition-all duration-300 hover:border-primary/50">
+<div class="aspect-video relative overflow-hidden bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center">
+<span class="text-[48px] font-display-xl text-on-primary-container/20 uppercase tracking-tighter">Voile Drift</span>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-4xl">open_in_new</span>
+</div>
+</div>
+<div class="p-card-padding">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-headline-md font-headline-md text-on-surface">Voile Drift</h3>
+<a class="text-primary hover:underline flex items-center gap-1 font-mono-label text-mono-label" href="#">
+                                Google Play <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+                            AI-powered calendar insights • Android. Personal app that logs events with rich descriptions, then runs Gemini Flash over them to surface relationships and generate insights.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-mono-label font-mono-label text-primary-fixed rounded-full">Kotlin</span>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline-variant/30 text-mono-label font-mono-label text-on-surface-variant rounded-full">Android</span>
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-mono-label font-mono-label text-primary-fixed rounded-full">Gemini Flash</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group glass-card rounded-xl overflow-hidden transition-all duration-300 hover:border-primary/50">
+<div class="aspect-video relative overflow-hidden bg-gradient-to-bl from-error/10 to-transparent flex items-center justify-center">
+<span class="text-[48px] font-display-xl text-on-error-container/20 uppercase tracking-tighter">Vera</span>
+</div>
+<div class="p-card-padding">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-headline-md font-headline-md text-on-surface">Vera</h3>
+<a class="text-primary hover:underline flex items-center gap-1 font-mono-label text-mono-label" href="#">
+                                Google Play <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+                            Menstrual cycle forecasting • Android. Mobile app that predicts and tracks menstrual cycles from user-logged history. Built for privacy and precision.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-mono-label font-mono-label text-primary-fixed rounded-full">Kotlin</span>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline-variant/30 text-mono-label font-mono-label text-on-surface-variant rounded-full">Android</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group glass-card rounded-xl overflow-hidden transition-all duration-300 hover:border-primary/50 md:col-span-2">
+<div class="aspect-video md:aspect-[21/9] relative overflow-hidden bg-gradient-to-r from-tertiary/10 to-transparent flex items-center justify-center">
+<span class="text-[48px] md:text-[64px] font-display-xl text-on-tertiary-container/20 uppercase tracking-tighter">Lontra Ágil</span>
+</div>
+<div class="p-card-padding">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-headline-md font-headline-md text-on-surface">Lontra Ágil</h3>
+<span class="text-on-surface-variant font-mono-label text-mono-label">Coming soon</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 max-w-3xl">
+                            AI study companion • Web + Mobile • In development. Study-prep platform for Brazilian <span class="italic">concursos públicos</span>: imports public-exam PDFs, parses them with Gemini Flash, and auto-generates practice questions.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-mono-label font-mono-label text-primary-fixed rounded-full">TypeScript</span>
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-mono-label font-mono-label text-primary-fixed rounded-full">Next.js</span>
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-mono-label font-mono-label text-primary-fixed rounded-full">React Native</span>
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-mono-label font-mono-label text-primary-fixed rounded-full">Gemini Flash</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile mb-section-gap-mobile md:mb-section-gap-desktop" id="experience">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-[2px] w-12 bg-primary"></div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Selected Work</h2>
+</div>
+<div class="space-y-12 relative before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[1px] before:bg-outline-variant/30 pl-8">
+<!-- Job 1 -->
+<div class="relative">
+<div class="absolute -left-10 top-2 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="text-headline-md font-headline-md text-on-surface">HubXP</span>
+<span class="text-mono-label font-mono-label text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-high">Jul 2025 – Present • Remote</span>
+</div>
+<span class="text-body-lg font-headline-md text-primary mt-2 md:mt-0">Full Stack Developer — AI Agent Integration</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+                        Designing and shipping AI agent integrations powering HubXP's flagship product. Refactoring legacy modules into typed, testable units. Stack: <span class="font-mono-code text-mono-code">TypeScript, Next.js, tRPC, Prisma, React Native, Mastra, Vercel AI SDK, Gemini Flash.</span>
+</p>
+</div>
+<!-- Job 2 -->
+<div class="relative">
+<div class="absolute -left-10 top-2 w-4 h-4 rounded-full bg-outline-variant border-4 border-background"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="text-headline-md font-headline-md text-on-surface">FutureSecureAi</span>
+<span class="text-mono-label font-mono-label text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-high">Feb 2025 – Jul 2025 • Remote</span>
+</div>
+<span class="text-body-lg font-headline-md text-primary mt-2 md:mt-0">Full Stack Developer — AI Agents Platform</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+                        Built production AI agents automating human-staffed workflows, including <span class="font-bold text-on-surface">Jack</span>, a voice-based interview agent (retell.ai) for phone screenings. Integrated multiple third-party APIs into a large legacy codebase.
+                    </p>
+</div>
+<!-- Job 3 -->
+<div class="relative">
+<div class="absolute -left-10 top-2 w-4 h-4 rounded-full bg-outline-variant border-4 border-background"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="text-headline-md font-headline-md text-on-surface">HubXP</span>
+<span class="text-mono-label font-mono-label text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-high">Nov 2023 – Feb 2025 • Remote</span>
+</div>
+<span class="text-body-lg font-headline-md text-primary mt-2 md:mt-0">Full Stack Developer — Multi-product SaaS</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+                        Shipped <span class="font-bold text-on-surface">Toki</span> (construction project SaaS, 200+ companies onboarded, 1,000+ RN installs), <span class="font-bold text-on-surface">Zuppy</span> (Brazilian electronic invoices on 1M+ records, with ~40x faster SQL on critical search), and integration work on <span class="font-bold text-on-surface">WePink</span> e-commerce.
+                    </p>
+</div>
+<!-- Job 4 -->
+<div class="relative">
+<div class="absolute -left-10 top-2 w-4 h-4 rounded-full bg-outline-variant border-4 border-background"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="text-headline-md font-headline-md text-on-surface">ACT Digital</span>
+<span class="text-mono-label font-mono-label text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-high">Oct 2021 – Apr 2023 • Remote</span>
+</div>
+<span class="text-body-lg font-headline-md text-primary mt-2 md:mt-0">Frontend Developer — Hospital Israelita Albert Einstein</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+                        Frontend on the scheduling and calendar system serving ~10M bookings/month at one of Latin America's top private hospital networks. Stack: <span class="font-mono-code text-mono-code">React + NestJS + Prisma.</span>
+</p>
+</div>
+</div>
+<div class="mt-12 text-center md:text-left">
+<button class="px-8 py-3 border border-outline-variant/30 text-on-surface rounded-lg font-headline-md font-bold hover:bg-surface-variant/50 transition-colors inline-flex items-center gap-2">
+                    See full work history (PDF) <span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile mb-section-gap-mobile md:mb-section-gap-desktop" id="skills">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-[2px] w-12 bg-primary"></div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Skills</h2>
+</div>
+<div class="space-y-12">
+<div>
+<h3 class="text-mono-label font-mono-label text-on-surface-variant uppercase tracking-widest mb-6">Primary</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-headline-md">TypeScript</span>
+<span class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-headline-md">React</span>
+<span class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-headline-md">Next.js</span>
+<span class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-headline-md">Node.js</span>
+<span class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-headline-md">React Native</span>
+<span class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-headline-md">tRPC</span>
+<span class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-headline-md">Prisma</span>
+</div>
+</div>
+<div>
+<h3 class="text-mono-label font-mono-label text-on-surface-variant uppercase tracking-widest mb-6">AI &amp; Backend</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">Gemini Flash</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">Vercel AI SDK</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">Mastra</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">LangChain</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">retell.ai</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">NestJS</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">PostgreSQL</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">GraphQL</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface rounded-md font-mono-label text-mono-label">REST APIs</span>
+</div>
+</div>
+<div>
+<h3 class="text-mono-label font-mono-label text-on-surface-variant uppercase tracking-widest mb-6">Mobile, DevOps &amp; Practices</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">Kotlin</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">Java (Android)</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">Vercel</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">AWS</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">CI/CD</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">Git</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">Jest</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">Vitest</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">TDD</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">Refactoring</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant rounded-md font-mono-label text-mono-label">Agile/Scrum</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile mb-section-gap-mobile md:mb-section-gap-desktop" id="contact">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-[2px] w-12 bg-primary"></div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Get in touch</h2>
+</div>
+<div class="grid sm:grid-cols-2 gap-gutter">
+<a class="glass-card p-6 rounded-xl flex items-center gap-6 group hover:border-primary/50 transition-all" href="mailto:nelsonkenzotamashiro@gmail.com">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<span class="block text-mono-label font-mono-label text-on-surface-variant uppercase tracking-widest text-[10px] mb-1">Email</span>
+<span class="text-body-md font-headline-md text-on-surface">nelsonkenzotamashiro@gmail.com</span>
+</div>
+</a>
+<a class="glass-card p-6 rounded-xl flex items-center gap-6 group hover:border-primary/50 transition-all" href="#">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">link</span>
+</div>
+<div>
+<span class="block text-mono-label font-mono-label text-on-surface-variant uppercase tracking-widest text-[10px] mb-1">LinkedIn</span>
+<span class="text-body-md font-headline-md text-on-surface">nelson-kenzo-tamashiro</span>
+</div>
+</a>
+<a class="glass-card p-6 rounded-xl flex items-center gap-6 group hover:border-primary/50 transition-all" href="#">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">star</span>
+</div>
+<div>
+<span class="block text-mono-label font-mono-label text-on-surface-variant uppercase tracking-widest text-[10px] mb-1">GitHub</span>
+<span class="text-body-md font-headline-md text-on-surface">@gitnlsn</span>
+</div>
+</a>
+<a class="glass-card p-6 rounded-xl flex items-center gap-6 group hover:border-primary/50 transition-all" href="#">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">play_circle</span>
+</div>
+<div>
+<span class="block text-mono-label font-mono-label text-on-surface-variant uppercase tracking-widest text-[10px] mb-1">Google Play Developer</span>
+<span class="text-body-md font-headline-md text-on-surface">Nelson Kenzo Tamashiro</span>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface dark:bg-surface border-t border-outline-variant/10">
+<div class="flex flex-col items-center gap-6 px-margin-mobile w-full">
+<div class="flex gap-8">
+<a class="text-on-surface-variant font-mono-label text-mono-label hover:text-on-surface transition-colors" href="#">GitHub</a>
+<a class="text-on-surface-variant font-mono-label text-mono-label hover:text-on-surface transition-colors" href="#">LinkedIn</a>
+<a class="text-on-surface-variant font-mono-label text-mono-label hover:text-on-surface transition-colors" href="#">Google Play</a>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">© 2024 Nelson Kenzo Tamashiro • Built with Precision</p>
+<p class="text-mono-label font-mono-label text-outline text-[12px]">São Paulo, Brazil</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center px-6 py-3 max-w-md mx-auto md:hidden bg-surface-container/80 backdrop-blur-lg dark:bg-surface-container/80 rounded-full border border-outline-variant/30 shadow-lg">
+<a class="bg-primary-container text-on-primary-container rounded-full p-3 scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-secondary-container/50 rounded-full transition-all" href="#projects">
+<span class="material-symbols-outlined">code</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-secondary-container/50 rounded-full transition-all" href="#experience">
+<span class="material-symbols-outlined">work_history</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-secondary-container/50 rounded-full transition-all" href="#contact">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</nav>
+<script>
+        // Simple scroll spy for active navigation highlighting (top bar)
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'font-bold');
+                link.classList.add('text-on-surface-variant');
+                if (link.getAttribute('href').includes(current) && current !== "") {
+                    link.classList.remove('text-on-surface-variant');
+                    link.classList.add('text-primary', 'font-bold');
+                }
+            });
+        });
+
+        // Hover effects for project cards
+        const projectCards = document.querySelectorAll('.glass-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

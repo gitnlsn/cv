@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nelson Kenzo · Full Stack &amp; AI Engineer</title>
+<meta name="description" content="Full Stack & Mobile Developer shipping AI-powered products from São Paulo. TypeScript, Next.js, Node.js, React Native.">
+
+<!-- Tailwind (CDN) -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+<!-- Devicon (used on Primary Stack chips) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface": "#101415",
+          "surface-dim": "#101415",
+          "surface-bright": "#363a3b",
+          "surface-container-lowest": "#0b0f10",
+          "surface-container-low": "#191c1e",
+          "surface-container": "#1d2022",
+          "surface-container-high": "#272a2c",
+          "surface-container-highest": "#323537",
+          "on-surface": "#e0e3e5",
+          "on-surface-variant": "#c3c6d7",
+          "inverse-surface": "#e0e3e5",
+          "inverse-on-surface": "#2d3133",
+          "outline": "#8d90a0",
+          "outline-variant": "#434655",
+          "surface-tint": "#b4c5ff",
+          "primary": "#b4c5ff",
+          "on-primary": "#002a78",
+          "primary-container": "#2563eb",
+          "on-primary-container": "#eeefff",
+          "inverse-primary": "#0053db",
+          "secondary": "#bec6e0",
+          "on-secondary": "#283044",
+          "secondary-container": "#3f465c",
+          "on-secondary-container": "#adb4ce",
+          "tertiary": "#bcc7de",
+          "on-tertiary": "#263143",
+          "tertiary-container": "#636e83",
+          "on-tertiary-container": "#ecf1ff",
+          "error": "#ffb4ab",
+          "on-error": "#690005",
+          "error-container": "#93000a",
+          "on-error-container": "#ffdad6",
+          "primary-fixed": "#dbe1ff",
+          "primary-fixed-dim": "#b4c5ff",
+          "on-primary-fixed": "#00174b",
+          "on-primary-fixed-variant": "#003ea8",
+          "secondary-fixed": "#dae2fd",
+          "secondary-fixed-dim": "#bec6e0",
+          "on-secondary-fixed": "#131b2e",
+          "on-secondary-fixed-variant": "#3f465c",
+          "tertiary-fixed": "#d8e3fb",
+          "tertiary-fixed-dim": "#bcc7de",
+          "on-tertiary-fixed": "#111c2d",
+          "on-tertiary-fixed-variant": "#3c475a",
+          "background": "#101415",
+          "on-background": "#e0e3e5",
+          "surface-variant": "#323537"
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        spacing: {
+          "container-max": "1200px",
+          "section-gap-desktop": "120px",
+          "margin-mobile": "20px",
+          "card-padding": "32px",
+          "section-gap-mobile": "64px",
+          "gutter": "24px"
+        },
+        fontFamily: {
+          "headline-lg-mobile": ["Geist", "system-ui", "sans-serif"],
+          "headline-lg": ["Geist", "system-ui", "sans-serif"],
+          "mono-label": ["JetBrains Mono", "monospace"],
+          "body-lg": ["Geist", "system-ui", "sans-serif"],
+          "mono-code": ["JetBrains Mono", "monospace"],
+          "body-md": ["Geist", "system-ui", "sans-serif"],
+          "headline-md": ["Geist", "system-ui", "sans-serif"],
+          "display-xl": ["Geist", "system-ui", "sans-serif"]
+        },
+        fontSize: {
+          "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+          "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "mono-label": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+          "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "mono-code": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "headline-md": ["30px", { "lineHeight": "1.3", "fontWeight": "600" }],
+          "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }]
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .glass-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(30, 41, 59, 0.5);
+  }
+  .experience-thread::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #1e293b;
+  }
+  html, body {
+    scroll-behavior: smooth;
+  }
+
+  /* Devicon sizing inside Primary skill chips */
+  .skill-primary i[class^="devicon-"] {
+    font-size: 14px;
+    margin-right: 6px;
+    vertical-align: -2px;
+  }
+
+  /* Project card preview when no screenshot */
+  .preview-fallback {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+  }
+  .preview-fallback span {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    color: rgba(180, 197, 255, 0.18);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 16px;
+  }
+</style>
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Top Nav -->
+<header class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+  <nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+    <a href="#" class="font-headline-md text-headline-md font-bold text-on-surface">Nelson Kenzo</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#about">About</a>
+      <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#projects">Projects</a>
+      <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#experience">Experience</a>
+      <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#skills">Skills</a>
+      <a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#contact">Contact</a>
+      <a href="../CV.pdf" class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-body-md text-body-md font-bold active:scale-95 transition-transform">Resume</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center pt-24 md:pt-20 pb-12 md:pb-0 px-gutter max-w-container-max mx-auto">
+    <div class="grid md:grid-cols-12 gap-12 items-center w-full">
+
+      <div class="md:col-span-7 space-y-8 order-2 md:order-1 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary-fixed">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+          <span class="font-mono-label text-mono-label uppercase tracking-widest">Open to opportunities</span>
+        </div>
+
+        <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl tracking-tight">
+          Hi, I'm <span class="text-primary-container">Nelson.</span>
+        </h1>
+
+        <p class="font-mono-label text-mono-label text-on-surface-variant">
+          <span class="text-primary">&gt;</span>
+          <span id="typed-role" class="text-on-surface"></span>
+        </p>
+
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto md:mx-0">
+          A Full Stack &amp; Mobile Developer crafting precision-engineered systems with <span class="text-primary font-bold">TypeScript, Next.js, Node.js, and React Native</span> &mdash; lately specializing in AI-agent integration for business automation.
+        </p>
+
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+          <a href="../CV.pdf" class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-body-md text-body-md font-bold hover:brightness-110 active:scale-95 transition-all flex items-center gap-2">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">download</span>
+            Download CV
+          </a>
+          <a href="#contact" class="border border-outline-variant text-on-surface px-8 py-4 rounded-lg font-body-md text-body-md font-bold hover:bg-surface-variant transition-all active:scale-95">
+            Get in touch
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 relative group order-1 md:order-2 max-w-[260px] sm:max-w-[320px] md:max-w-none mx-auto w-full">
+        <div class="absolute -inset-4 bg-primary/20 blur-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+        <div class="relative aspect-[3/4] rounded-2xl overflow-hidden glass-card">
+          <img alt="Nelson Kenzo Tamashiro" class="w-full h-full object-cover object-top" src="assets/nelson.jpg">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-container-max mx-auto" id="about">
+    <div class="grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-4">
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg md:sticky md:top-32">About</h2>
+      </div>
+      <div class="md:col-span-8 space-y-6">
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          With <span class="text-on-surface font-bold">6+ years</span> of professional experience, I've focused my career on building scalable, maintainable, user-centric production systems. I've worked across early-stage startups and established tech firms, blending engineering rigor with creative problem-solving.
+        </p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          I specialize in the <span class="text-on-surface font-bold">TypeScript</span> ecosystem &mdash; React and React Native for cross-platform UI, Node.js for backends, and LLM-based agent integrations via Vercel AI SDK and Mastra. I believe in clean code, automated testing, and the idea that great software is as much about the people who use it as the code beneath it.
+        </p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Based in <span class="text-on-surface font-bold">São Paulo, Brazil</span>. Remote-first, collaborating with teams across LATAM and Europe.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest" id="projects">
+    <div class="px-gutter max-w-container-max mx-auto">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-12 md:mb-16 text-center">Featured Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Voile Drift -->
+        <div class="glass-card rounded-xl p-card-padding flex flex-col group hover:border-primary/50 transition-all duration-300">
+          <div class="h-48 mb-6 rounded-lg overflow-hidden bg-surface-container-high relative">
+            <img src="assets/voile-drift.png" alt="Voile Drift feature graphic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-3">Voile Drift</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+            AI-powered calendar insights for Android. Logs events with rich descriptions, then runs Gemini Flash over them to surface relationships and generate insights.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-primary/10 border border-primary/20 text-primary">Kotlin</span>
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-secondary-container text-on-secondary-container">Android</span>
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-secondary-container text-on-secondary-container">Gemini Flash</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <a class="text-primary hover:underline font-bold flex items-center gap-1" href="https://play.google.com/store/apps/details?id=com.voiledrift.mobile" target="_blank" rel="noopener">
+              Google Play <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Vera -->
+        <div class="glass-card rounded-xl p-card-padding flex flex-col group hover:border-primary/50 transition-all duration-300">
+          <div class="h-48 mb-6 rounded-lg overflow-hidden bg-surface-container-high relative">
+            <img src="assets/vera.png" alt="Vera feature graphic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-3">Vera</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+            Menstrual cycle forecasting for Android. Predicts and tracks cycles from user-logged history, built for privacy and precision.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-primary/10 border border-primary/20 text-primary">Kotlin</span>
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-secondary-container text-on-secondary-container">Android</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <a class="text-primary hover:underline font-bold flex items-center gap-1" href="https://play.google.com/store/apps/details?id=com.nelson.vera.mobile" target="_blank" rel="noopener">
+              Google Play <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Lontra Ágil -->
+        <div class="glass-card rounded-xl p-card-padding flex flex-col group hover:border-primary/50 transition-all duration-300">
+          <div class="h-48 mb-6 rounded-lg overflow-hidden bg-surface-container-high relative">
+            <img src="assets/lontra-agil.png" alt="Lontra Ágil landing page" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-3">Lontra Ágil</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+            AI study companion for Brazilian <span class="italic">concursos públicos</span>. Parses public-exam PDFs with Gemini Flash and auto-generates practice questions. Team project.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-primary/10 border border-primary/20 text-primary">TypeScript</span>
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-secondary-container text-on-secondary-container">Next.js</span>
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-secondary-container text-on-secondary-container">React Native</span>
+            <span class="font-mono-code text-mono-code px-2 py-1 rounded bg-secondary-container text-on-secondary-container">Gemini Flash</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <a class="text-primary hover:underline font-bold flex items-center gap-1" href="https://play.google.com/store/apps/details?id=com.nllsn.pubconapp" target="_blank" rel="noopener">
+              Google Play <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-container-max mx-auto" id="experience">
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-12 md:mb-16">Work Experience</h2>
+    <div class="space-y-0">
+
+      <div class="grid md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 experience-thread relative pl-8 md:pl-12">
+        <div class="absolute left-0 top-11 w-2.5 h-2.5 rounded-full bg-primary-container -translate-x-[4.5px] border-4 border-background ring-4 ring-primary/20"></div>
+        <div class="md:col-span-3">
+          <span class="font-mono-label text-mono-label text-on-surface-variant uppercase">Jul 2025 — Present</span>
+        </div>
+        <div class="md:col-span-9">
+          <h3 class="font-headline-md text-headline-md leading-none mb-1">Full Stack Developer</h3>
+          <p class="font-body-md text-body-md text-primary font-bold mb-4">HubXP · Remote</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Designing and shipping AI agent integrations powering HubXP's flagship product. Refactoring legacy modules into typed, testable units. Stack: <span class="font-mono-code text-mono-code">TypeScript, Next.js, tRPC, Prisma, React Native, Mastra, Vercel AI SDK, Gemini Flash.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 experience-thread relative pl-8 md:pl-12">
+        <div class="absolute left-0 top-11 w-2.5 h-2.5 rounded-full bg-outline-variant -translate-x-[4.5px] border-4 border-background"></div>
+        <div class="md:col-span-3">
+          <span class="font-mono-label text-mono-label text-on-surface-variant uppercase">Feb 2025 — Jul 2025</span>
+        </div>
+        <div class="md:col-span-9">
+          <h3 class="font-headline-md text-headline-md leading-none mb-1">Full Stack Developer</h3>
+          <p class="font-body-md text-body-md text-primary font-bold mb-4">FutureSecureAi · Remote</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Built production AI agents automating human-staffed workflows, including <span class="font-bold text-on-surface">Jack</span>, a voice-based interview agent (retell.ai) for phone screenings. Integrated multiple third-party APIs into a large legacy codebase.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 experience-thread relative pl-8 md:pl-12">
+        <div class="absolute left-0 top-11 w-2.5 h-2.5 rounded-full bg-outline-variant -translate-x-[4.5px] border-4 border-background"></div>
+        <div class="md:col-span-3">
+          <span class="font-mono-label text-mono-label text-on-surface-variant uppercase">Nov 2023 — Feb 2025</span>
+        </div>
+        <div class="md:col-span-9">
+          <h3 class="font-headline-md text-headline-md leading-none mb-1">Full Stack Developer</h3>
+          <p class="font-body-md text-body-md text-primary font-bold mb-4">HubXP · Remote</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Shipped <span class="font-bold text-on-surface">Toki</span> (construction project SaaS, 200+ companies onboarded, 1,000+ RN installs), <span class="font-bold text-on-surface">Zuppy</span> (Brazilian electronic invoices on 1M+ records, with ~40× faster SQL on critical search), and integration work on <span class="font-bold text-on-surface">WePink</span> e-commerce.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 experience-thread relative pl-8 md:pl-12">
+        <div class="absolute left-0 top-11 w-2.5 h-2.5 rounded-full bg-outline-variant -translate-x-[4.5px] border-4 border-background"></div>
+        <div class="md:col-span-3">
+          <span class="font-mono-label text-mono-label text-on-surface-variant uppercase">Oct 2021 — Apr 2023</span>
+        </div>
+        <div class="md:col-span-9">
+          <h3 class="font-headline-md text-headline-md leading-none mb-1">Frontend Developer</h3>
+          <p class="font-body-md text-body-md text-primary font-bold mb-4">ACT Digital · Remote</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Frontend on the scheduling and calendar system serving ~10M bookings/month at Hospital Israelita Albert Einstein, one of Latin America's top private hospital networks. Stack: <span class="font-mono-code text-mono-code">React + NestJS + Prisma.</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-12 text-center md:text-left md:pl-12">
+      <a href="../CV.pdf" class="inline-flex items-center gap-2 px-8 py-3 border border-outline-variant text-on-surface rounded-lg font-body-md text-body-md font-bold hover:bg-surface-variant transition-all">
+        See full work history (PDF) <span class="material-symbols-outlined text-base">download</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Expertise -->
+  <section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low" id="skills">
+    <div class="px-gutter max-w-container-max mx-auto">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-12 md:mb-16 text-center">Expertise</h2>
+      <div class="grid md:grid-cols-3 gap-10 md:gap-12">
+
+        <div class="space-y-6">
+          <h3 class="font-headline-md text-headline-md text-primary border-b border-outline-variant/30 pb-4">Primary Stack</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-primary font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-primary/10 border border-primary/40 text-primary"><i class="devicon-typescript-plain"></i>TypeScript</span>
+            <span class="skill-primary font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-primary/10 border border-primary/40 text-primary"><i class="devicon-react-original"></i>React</span>
+            <span class="skill-primary font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-primary/10 border border-primary/40 text-primary"><i class="devicon-nextjs-plain"></i>Next.js</span>
+            <span class="skill-primary font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-primary/10 border border-primary/40 text-primary"><i class="devicon-nodejs-plain"></i>Node.js</span>
+            <span class="skill-primary font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-primary/10 border border-primary/40 text-primary"><i class="devicon-react-original"></i>React Native</span>
+            <span class="skill-primary font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-primary/10 border border-primary/40 text-primary">tRPC</span>
+            <span class="skill-primary font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-primary/10 border border-primary/40 text-primary"><i class="devicon-prisma-original"></i>Prisma</span>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="font-headline-md text-headline-md border-b border-outline-variant/30 pb-4">AI &amp; Backend</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Gemini Flash</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Vercel AI SDK</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Mastra</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">LangChain</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">retell.ai</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">NestJS</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">PostgreSQL</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">GraphQL</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="font-headline-md text-headline-md border-b border-outline-variant/30 pb-4">Mobile &amp; DevOps</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Kotlin</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Java (Android)</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Vercel</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">AWS</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">GitHub Actions</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Git</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Jest</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Vitest</span>
+            <span class="font-mono-code text-mono-code px-3 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface">Agile/Scrum</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-container-max mx-auto" id="contact">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Let's Connect</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
+        Interested in working together or just want to say hi? Feel free to reach out through any of these channels.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <a class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:border-primary group transition-all text-center" href="mailto:nelsonkenzotamashiro@gmail.com">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined">mail</span>
+        </div>
+        <span class="font-headline-md text-[20px] font-bold">Email</span>
+        <span class="font-body-md text-body-md text-on-surface-variant break-all">nelsonkenzotamashiro@gmail.com</span>
+      </a>
+
+      <a class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:border-primary group transition-all text-center" href="https://www.linkedin.com/in/nelson-kenzo-tamashiro" target="_blank" rel="noopener">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined">link</span>
+        </div>
+        <span class="font-headline-md text-[20px] font-bold">LinkedIn</span>
+        <span class="font-body-md text-body-md text-on-surface-variant">/in/nelson-kenzo-tamashiro</span>
+      </a>
+
+      <a class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:border-primary group transition-all text-center" href="https://github.com/gitnlsn" target="_blank" rel="noopener">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined">terminal</span>
+        </div>
+        <span class="font-headline-md text-[20px] font-bold">GitHub</span>
+        <span class="font-body-md text-body-md text-on-surface-variant">@gitnlsn</span>
+      </a>
+
+      <a class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:border-primary group transition-all text-center" href="https://play.google.com/store/apps/developer?id=nelson+kenzo+tamashiro" target="_blank" rel="noopener">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined">smartphone</span>
+        </div>
+        <span class="font-headline-md text-[20px] font-bold">Google Play</span>
+        <span class="font-body-md text-body-md text-on-surface-variant">Nelson Kenzo Apps</span>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant/20 bg-surface-container-lowest">
+  <div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-6">
+    <div class="font-headline-md text-headline-md font-bold text-on-surface">Nelson Kenzo</div>
+    <p class="font-body-md text-body-md text-on-surface-variant text-center">Built with precision · São Paulo, Brazil</p>
+    <div class="flex gap-6">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="https://github.com/gitnlsn" target="_blank" rel="noopener">GitHub</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="https://www.linkedin.com/in/nelson-kenzo-tamashiro" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="https://play.google.com/store/apps/developer?id=nelson+kenzo+tamashiro" target="_blank" rel="noopener">Google Play</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Typed.js for rotating role line in hero -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  new Typed('#typed-role', {
+    strings: [
+      'Full Stack Developer',
+      'Mobile Developer',
+      'AI Integrator',
+      'TypeScript Engineer'
+    ],
+    typeSpeed: 55,
+    backSpeed: 25,
+    backDelay: 1800,
+    startDelay: 400,
+    loop: true,
+    smartBackspace: true
+  });
+
+  // Scroll spy for top nav
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 120) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('text-primary', 'font-bold');
+      link.classList.add('text-on-surface-variant', 'font-medium');
+      if (current && link.getAttribute('href') === '#' + current) {
+        link.classList.add('text-primary', 'font-bold');
+        link.classList.remove('text-on-surface-variant', 'font-medium');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
