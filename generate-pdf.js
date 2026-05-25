@@ -2,7 +2,7 @@ const path = require("node:path");
 const { pathToFileURL } = require("node:url");
 const puppeteer = require("puppeteer");
 
-const HTML_FILE = path.resolve(__dirname, "CV.html");
+const HTML_FILE = path.resolve(__dirname, "index.html");
 const PDF_FILE = path.resolve(__dirname, "CV.pdf");
 
 async function main() {

@@ -5,9 +5,9 @@ Source files and PDF generator for Nelson Kenzo Tamashiro's CV.
 ## Files
 
 - `CV.md` — Markdown source (human-editable, for content review).
-- `CV.html` — Styled HTML used to render the PDF. **Edit this for visual/content changes that ship in the PDF.**
+- `index.html` — Styled HTML used to render the PDF. **Edit this for visual/content changes that ship in the PDF.**
 - `CV.pdf` — Generated output. Do not edit by hand — it's overwritten on every build.
-- `generate-pdf.js` — Puppeteer script that renders `CV.html` → `CV.pdf` (Letter, 0.6in × 0.7in margins, backgrounds enabled).
+- `generate-pdf.js` — Puppeteer script that renders `index.html` → `CV.pdf` (Letter, 0.6in × 0.7in margins, backgrounds enabled).
 
 ## Generate the PDF
 
@@ -16,11 +16,11 @@ npm install        # first time only
 npm run generate   # writes ./CV.pdf
 ```
 
-The script launches a headless Chromium via Puppeteer, loads `CV.html` from the filesystem, waits for network idle, and prints to PDF. Output path: `./CV.pdf`.
+The script launches a headless Chromium via Puppeteer, loads `index.html` from the filesystem, waits for network idle, and prints to PDF. Output path: `./CV.pdf`.
 
 ## Editing workflow
 
-1. Edit `CV.html` (this is the canonical source for the PDF).
+1. Edit `index.html` (this is the canonical source for the PDF).
 2. Run `npm run generate`.
 3. Open `CV.pdf` to verify.
 
