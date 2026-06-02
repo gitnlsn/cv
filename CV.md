@@ -37,9 +37,10 @@ Full Stack Developer with 6+ years of experience designing, coding, testing, deb
 
 - Refactored **~8,000 lines** of legacy code — replacing buggy, hard-to-test modules with typed, testable units — **reducing recurring production defects by ~45%** and **lifting unit-test coverage from ~30% to ~75%** in the touched modules.
 - Designed and shipped **AI agent integrations** powering HubXP's flagship product, embedding **Gemini Flash** workflows via **Vercel AI SDK** / **Mastra** into existing client-facing features across web and mobile clients — **cutting ~6 hours/week** of manual operator work per client.
+- Built and maintained a **Python** repository housing a **LangChain** agent supporting HubXP's AI workflows.
 - Owned features end-to-end across the stack: **Next.js** + React frontends, **tRPC** + **Prisma** backend, and a shared **React Native** mobile app — type safety enforced from database schema through to UI.
 - Authored **technical documentation** for refactored modules and AI-agent integration points to accelerate onboarding for new engineers.
-- **Stack:** TypeScript, React, Next.js, tRPC, Prisma, React Native, Mastra, Vercel AI SDK, Gemini Flash, Vercel, Vitest, Agile/Scrum
+- **Stack:** TypeScript, React, Next.js, tRPC, Prisma, React Native, Mastra, Vercel AI SDK, Gemini Flash, Python, LangChain, Vercel, Vitest, Agile/Scrum
 
 ### FutureSecureAi — Full Stack Developer
 *Feb 2025 – Jul 2025 · Remote*
