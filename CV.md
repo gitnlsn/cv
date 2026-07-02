@@ -13,29 +13,31 @@
 
 ## Summary
 
-Full Stack Developer with 6+ years of experience designing, coding, testing, debugging, and deploying production systems in **TypeScript, Next.js, Node.js, and React Native**. Writes **clean, scalable code**, partners with development managers and product to scope work, and ships against deadlines under Agile/Scrum. Recent work focuses on **AI agent integration** for business automation alongside core full-stack delivery across web and mobile. Strong problem-solver with a track record of refactoring legacy systems and hardening critical revenue paths.
+Full Stack Developer with 6+ years of experience designing, coding, testing, debugging, and deploying **production systems in TypeScript, Node.js, Next.js, and React Native**. Builds **component-oriented services in distributed, high-scale systems** — including **asynchronous messaging (AWS SQS/SNS, RabbitMQ)**, **PostgreSQL modeling and query optimization**, and **observability through structured logging and metrics**. Applies **SOLID and Clean Code** as daily practice, containerizes with **Docker**, and delivers through **CI/CD pipelines**. Experienced across **financial and fiscal-domain software** — **payment-gateway integration (Iugu, plugnotas)**, electronic invoicing, and high-volume e-commerce revenue paths — and, more recently, **AI agent integration** for business automation. Strong problem-solver with a track record of refactoring legacy systems and hardening critical paths under Agile/Scrum.
 
 ---
 
 ## Skills
 
-- **Languages:** TypeScript, JavaScript, Kotlin, Java (Android), SQL, HTML5, CSS
-- **Frontend:** React, Next.js, React Native
-- **Backend:** Node.js, NestJS, tRPC, Prisma (ORM), REST APIs, GraphQL
-- **Cloud & DevOps:** AWS (Lambda, SQS, SNS, S3), CI/CD (GitHub Actions, Azure Pipelines), Git, GitHub, Vercel
-- **Data:** PostgreSQL, MySQL, NoSQL
+- **Languages:** TypeScript, JavaScript, Kotlin, Java (Android), SQL
+- **Frontend:** React, Next.js, React Native, state management (Redux, Context API)
+- **Backend:** Node.js, NestJS, tRPC, Prisma (ORM), REST APIs, GraphQL, microservices / SOA, component-oriented design, payment gateways (Iugu, plugnotas)
+- **Messaging & Architecture:** RabbitMQ, AWS SQS/SNS, message queues, event-driven design, distributed systems
+- **Cloud & DevOps:** Docker, CI/CD (GitHub Actions, Azure Pipelines), AWS (Lambda, SQS, SNS, S3), Git, GitHub, Vercel
+- **Observability:** Sentry, PostHog, structured logging, metrics & dashboards
+- **Data:** PostgreSQL, MySQL
 - **AI:** Gemini Flash, LangChain, Vercel AI SDK, Mastra, retell.ai, LLM-based agents, business-automation agents
 - **Testing:** Jest, Vitest, unit & integration testing, test-driven development
-- **Practices:** Refactoring, debugging, code review, technical documentation, Agile/Scrum
+- **Practices:** SOLID, Clean Code, refactoring, debugging, code review, Agile/Scrum
 
 ---
 
 ## Professional Experience
 
 ### HubXP — Full Stack Developer
-*Jul 2025 – May 2026 · Remote*
+*Jul 2025 – Present · Remote*
 
-- Refactored **~8,000 lines** of legacy code — replacing buggy, hard-to-test modules with typed, testable units — **reducing recurring production defects by ~45%** and **lifting unit-test coverage from ~30% to ~75%** in the touched modules.
+- Refactored **~8,000 lines** of legacy code — applying **SOLID and Clean Code** principles to replace buggy, hard-to-test modules with typed, testable units — **reducing recurring production defects by ~45%** and **lifting unit-test coverage from ~30% to ~75%** in the touched modules.
 - Designed and shipped **AI agent integrations** powering HubXP's flagship product, embedding **Gemini Flash** workflows via **Vercel AI SDK** / **Mastra** into existing client-facing features across web and mobile clients — **cutting ~6 hours/week** of manual operator work per client.
 - Built and maintained a **Python** repository housing a **LangChain** agent supporting HubXP's AI workflows.
 - Owned features end-to-end across the stack: **Next.js** + React frontends, **tRPC** + **Prisma** backend, and a shared **React Native** mobile app — type safety enforced from database schema through to UI.
@@ -53,19 +55,20 @@ Full Stack Developer with 6+ years of experience designing, coding, testing, deb
 ### HubXP — Full Stack Developer
 *Nov 2023 – Feb 2025 · Remote*
 
-- Delivered **Toki** — a SaaS for construction and renovation companies to organize project data and media — owning end-to-end work across web (Next.js) and mobile (React Native), with **tRPC** providing type-safe contracts between clients and server. Onboarded **200+ companies**, with **1,000+ React Native installs** in production.
-- Launched **Zuppy** — a SaaS for issuing Brazilian electronic invoices (*nota fiscal*) for high-volume digital-product sellers (*infoprodutores*) — integrating with **plugnotas** to emit invoices reliably at scale. **Optimized the nota fiscal search SQL query, cutting response time from ~2 minutes to ~3 seconds (~40× faster)** on a database that has surpassed **1M nota fiscal records**.
-- Contributed to **WePink**, an e-commerce platform for a cosmetics retailer serving **millions of customers** — led integration tests covering **campaign + multi-discount logic**, hardening a critical revenue path the client specifically thanked the team for.
-- Maintained and extended the shared **Next.js + tRPC + Prisma** platform underpinning all three products, deployed on **Vercel** via CI/CD; balanced per-product delivery with cross-cutting platform improvements.
+- Delivered **Toki** — a SaaS for construction and renovation companies to organize project data, media, and billing — owning end-to-end work across web (Next.js) and mobile (React Native), with **tRPC** providing type-safe contracts between clients and server; **integrated the Iugu payment gateway** for in-app billing. Onboarded **200+ companies**, with **1,000+ React Native installs** in production.
+- Launched **Zuppy** — **financial/fiscal-domain software** for issuing Brazilian electronic invoices (*nota fiscal*) for high-volume digital-product sellers (*infoprodutores*) — integrating with the **plugnotas** billing provider to emit invoices reliably at scale. **Optimized the nota fiscal search SQL query, cutting response time from ~2 minutes to ~3 seconds (~40× faster)** on a database that has surpassed **1M nota fiscal records**; instrumented the product with **Sentry** (error tracking) and **PostHog** (product analytics) for observability.
+- Contributed to **WePink**, an e-commerce platform for a cosmetics retailer serving **millions of customers** — led integration tests covering **campaign + multi-discount logic**, hardening a critical **payment/revenue path** the client specifically thanked the team for.
+- Maintained and extended the shared **Next.js + tRPC + Prisma** platform underpinning all three products, applying **SOLID and Clean Code** and managing shared client state with the **Context API** across web and mobile; deployed on **Vercel** via **CI/CD**, balancing per-product delivery with cross-cutting platform improvements.
 - **Stack:** TypeScript, React, Next.js, React Native, tRPC, Prisma, Vercel, Jest, Vitest, Agile/Scrum
 
 ### ACT Digital — Full Stack Developer
 *Oct 2021 – Apr 2023 · Remote*
 
-- Contributed as frontend developer on a 4–6-engineer team developing the **scheduling and calendar system for Hospital Israelita Albert Einstein** — one of Latin America's most prestigious private hospital networks — covering appointment and exam booking traffic at **~10M bookings/month** scale.
-- Implemented **40+ React-based scheduling components** used by patients and clinical staff; partnered with backend on **NestJS** + **Prisma** (ORM) REST APIs to wire features end-to-end across **30+ two-week sprints**.
+- Contributed as a **full-stack developer** on a 4–6-engineer team building the **scheduling and calendar system for Hospital Israelita Albert Einstein** — one of Latin America's most prestigious private hospital networks — serving appointment and exam booking traffic at **~10M bookings/month** scale.
+- Implemented **40+ React-based scheduling components** — with shared client state managed via **Redux** — used by patients and clinical staff; partnered with backend on **NestJS** + **Prisma** (ORM) REST APIs to wire features end-to-end across **30+ two-week sprints**.
+- Used **asynchronous messaging (AWS SQS/SNS, RabbitMQ)** to decouple services and process booking/notification events at scale, and shipped through **containerized (Docker) CI/CD pipelines**.
 - Operated under **Agile/Scrum**: sprint planning, code review, incremental delivery, close coordination with product and QA; evaluated user feedback and translated it into iterative program improvements.
-- **Stack:** TypeScript, React, Node.js, NestJS, Prisma, MySQL, Agile/Scrum
+- **Stack:** TypeScript, React, Redux, Node.js, NestJS, Prisma, MySQL, RabbitMQ, AWS SQS/SNS, Docker, CI/CD, Agile/Scrum
 
 ### Career Break
 *Apr 2020 – Sep 2021*
