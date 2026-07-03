@@ -86,6 +86,12 @@ Full Stack Developer with 6+ years of experience designing, coding, testing, deb
 
 ## Education
 
+**MBA in Applied AI Engineering** — UNIPDS - Anhanguera *(2026 – 2027)*
+
+- Postgraduate *Lato Sensu* program in applied AI engineering, prompt engineering, and generative-AI tooling.
+- Training and applying **neural networks with TensorFlow.js** for image pattern recognition and user-behavior prediction.
+- Using **AI tools to accelerate developer workflows**.
+
 **Mechatronics Engineering** — Universidade de São Paulo *(2013 – 2018)*
 
 - Relevant coursework: **software architecture**, **data structures & algorithms**, and adjacent software-engineering disciplines.
