@@ -1,10 +1,12 @@
 {
   "name": "cv",
   "version": "1.0.0",
-  "description": "Nelson Kenzo Tamashiro — CV (HTML source + PDF generator)",
+  "description": "Nelson Kenzo Tamashiro — CV and portfolio (HTML sources + PDF generator)",
   "main": "generate-pdf.js",
   "scripts": {
-    "generate": "node generate-pdf.js"
+    "generate": "node generate-pdf.js",
+    "generate:cv": "node generate-pdf.js cv",
+    "generate:portfolio": "node generate-pdf.js portfolio"
   },
   "keywords": [],
   "author": "",

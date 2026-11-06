@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nelson Kenzo Tamashiro — Portfolio</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 0.55in 0.7in;
+  }
+  :root {
+    --accent: #a3341a;
+    --ink: #1f2328;
+    --muted: #555;
+    --rule: #e2d6d2;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", "Times", serif;
+    font-size: 10pt;
+    line-height: 1.4;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Header block (same as CV) */
+  .header {
+    text-align: center;
+    padding: 8px 0 12px 0;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 23pt;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    margin: 6px 0 4px 0;
+  }
+  .role-line {
+    font-size: 12pt;
+    color: var(--accent);
+    font-variant: small-caps;
+    letter-spacing: 1.5px;
+    margin: 0;
+  }
+  .contact {
+    font-size: 10pt;
+    text-align: center;
+    margin: 0 0 4px 0;
+  }
+  .contact .sep {
+    color: var(--accent);
+    margin: 0 8px;
+  }
+
+  /* Section headings: centered small-caps flanked by horizontal rules */
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 11.5pt;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin: 16px 0 6px 0;
+    break-after: avoid;
+  }
+  h2::before,
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--accent);
+  }
+  .section-intro {
+    font-size: 9.5pt;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 6px 0;
+  }
+
+  .summary {
+    margin: 0;
+    text-align: justify;
+  }
+
+  /* At-a-glance strip */
+  .glance {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 10px 0 2px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .glance .cell {
+    text-align: center;
+    padding: 6px 4px;
+  }
+  .glance .cell + .cell { border-left: 1px solid var(--rule); }
+  .glance .num {
+    display: block;
+    font-size: 15pt;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+  .glance .lbl {
+    font-size: 8.5pt;
+    color: var(--muted);
+    font-variant: small-caps;
+    letter-spacing: 1px;
+  }
+
+  /* Project entries */
+  .proj {
+    margin: 9px 0 0 0;
+    break-inside: avoid;
+  }
+  .proj-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 10.5pt;
+  }
+  .proj-head .title strong { color: var(--ink); }
+  .proj-head .when {
+    flex: 0 0 auto;
+    font-size: 9.5pt;
+    color: var(--muted);
+  }
+  .proj-meta {
+    font-size: 9.3pt;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1px 0;
+  }
+  .proj-meta .sep {
+    color: var(--accent);
+    margin: 0 5px;
+    font-style: normal;
+  }
+  .tag {
+    display: inline-block;
+    font-style: normal;
+    font-variant: small-caps;
+    letter-spacing: 0.8px;
+    font-size: 8.5pt;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    padding: 0 4px;
+    line-height: 1.35;
+    vertical-align: 1px;
+  }
+
+  ul {
+    margin: 3px 0 2px 0;
+    padding-left: 18px;
+  }
+  li { margin-bottom: 2px; }
+
+  .stack {
+    font-size: 9.3pt;
+    color: var(--muted);
+    margin: 1px 0 0 0;
+  }
+  .stack strong { color: var(--ink); }
+
+  /* Compact grid for smaller projects */
+  .mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 26px;
+    margin: 6px 0 0 0;
+  }
+  .mini {
+    break-inside: avoid;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  .mini .name {
+    display: block;
+    font-size: 10pt;
+  }
+  .mini .stack { font-size: 8.8pt; }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Nelson Kenzo Tamashiro</h1>
+  <div class="role-line">Portfolio · Selected Projects · 2019 &ndash; 2026</div>
+</div>
+
+<div class="contact">
+  São Paulo, Brazil <span class="sep">♦</span> +55 (11) 97515-3417 <span class="sep">♦</span> nelsonkenzotamashiro@gmail.com
+</div>
+<div class="contact">
+  github.com/gitnlsn <span class="sep">♦</span> linkedin.com/in/nelson-kenzo-tamashiro
+</div>
+<div class="contact">
+  play.google.com/store/apps/developer?id=nelson+kenzo+tamashiro
+</div>
+
+<h2>Overview</h2>
+<p class="summary">
+  A selection of products I have built or contributed to &mdash; from <strong>production SaaS used by hundreds of companies</strong> to <strong>apps published on Google Play</strong>, <strong>AI agents and on-device AI</strong>, and <strong>systems and numerical-computing</strong> side projects. Most of it is <strong>TypeScript end to end</strong> (Next.js, tRPC, Prisma, React Native/Expo), with excursions into <strong>Kotlin, Rust/WebAssembly, Go and Python</strong> where the problem called for it. Each entry lists my role, the problem, what I built and the stack; public repositories are under <strong>github.com/gitnlsn</strong>.
+</p>
+
+<div class="glance">
+  <div class="cell"><span class="num">200+</span><span class="lbl">companies on Toki</span></div>
+  <div class="cell"><span class="num">1M+</span><span class="lbl">invoices in Zuppy</span></div>
+  <div class="cell"><span class="num">3</span><span class="lbl">apps on Google Play</span></div>
+  <div class="cell"><span class="num">25+</span><span class="lbl">projects shipped</span></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Production Products</h2>
+<p class="section-intro">Commercial software built as part of a product team, in production with paying customers.</p>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Toki</strong> &mdash; project &amp; billing SaaS for construction companies</span>
+    <span class="when">2023 &ndash; 2026</span>
+  </div>
+  <div class="proj-meta">HubXP <span class="sep">♦</span> Full-stack developer, web + mobile <span class="sep">♦</span> 1,200+ commits</div>
+  <ul>
+    <li>SaaS for construction and renovation companies to organize project data, media and billing; onboarded <strong>200+ companies</strong> and <strong>1,000+ React Native installs</strong>.</li>
+    <li>Turborepo monorepo with <strong>Next.js</strong> web, <strong>Expo / React Native</strong> mobile and a shared <strong>tRPC + Prisma</strong> API &mdash; type safety from database schema to UI.</li>
+    <li>Integrated the <strong>Iugu payment gateway</strong> for in-app billing &mdash; later a dual integration with backward compatibility; built CNPJ company autocomplete and moved PDF generation to Vercel functions.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Next.js, React Native (Expo), tRPC, Prisma, PostgreSQL, Iugu, Vercel, EAS</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Zuppy</strong> &mdash; electronic invoicing (<em>nota fiscal</em>) for digital-product sellers</span>
+    <span class="when">2023 &ndash; 2025</span>
+  </div>
+  <div class="proj-meta">HubXP <span class="sep">♦</span> Full-stack developer <span class="sep">♦</span> 560+ commits</div>
+  <ul>
+    <li>Fiscal-domain platform that issues Brazilian electronic invoices at scale for <em>infoprodutores</em>, integrated with the <strong>plugnotas</strong> provider to emit invoices reliably at scale.</li>
+    <li>Rewrote the invoice search query, cutting response time from <strong>~2 min to ~3 s (~40&times;)</strong> on a table past <strong>1M records</strong>; added <strong>Sentry</strong> and <strong>PostHog</strong> for observability.</li>
+    <li>Prototyped <strong>Zuppy AI</strong>, a set of <strong>Mastra</strong> agents that onboard a company conversationally and generate subscription checkout links, with Zod-validated tool outputs.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Next.js, tRPC, Prisma, PostgreSQL, plugnotas, Mastra, Vitest, Sentry, PostHog</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Talent Discovery</strong> &mdash; AI agent that sources engineers from GitHub</span>
+    <span class="when">2026</span>
+  </div>
+  <div class="proj-meta">HubXP <span class="sep">♦</span> Author</div>
+  <ul>
+    <li>Given a job description in Markdown, searches GitHub via <strong>GraphQL</strong>, enriches profiles (languages, contributions, repositories) and ranks candidates on a <strong>0&ndash;100 multi-dimensional score</strong> with confidence levels.</li>
+    <li>&ldquo;Code over clout&rdquo;: scoring weighs PR descriptions, review quality and documentation over follower counts; results cached and exported as JSON, CSV or table.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Mastra, Gemini, GitHub GraphQL API, Node.js</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>HubXP Institutional &amp; Talent Marketplace</strong></span>
+    <span class="when">2022 &ndash; 2026</span>
+  </div>
+  <div class="proj-meta">HubXP <span class="sep">♦</span> Contributor</div>
+  <ul>
+    <li>Company website and talent marketplace on the T3 stack; Next.js pages &rarr; tRPC procedures &rarr; <strong>use-case layer</strong> &rarr; Prisma, with Better Auth and Dockerized local environment.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Next.js, tRPC, Prisma, PostgreSQL, Better Auth, Docker</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Published Mobile Apps</h2>
+<p class="section-intro">Apps I designed, built and published myself on Google Play.</p>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Voile Drift</strong> &mdash; AI-powered calendar insights</span>
+    <span class="when"><span class="tag">Google Play</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> play.google.com/store/apps/details?id=com.voiledrift.mobile</div>
+  <ul>
+    <li>Logs the user&rsquo;s events with rich descriptions and runs <strong>Gemini Flash</strong> over them to surface relationships between events and generate insights.</li>
+    <li>Shipped with its own Next.js landing page and a CLI that generates Instagram carousel cards for marketing.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> Kotlin, Android, Gemini Flash API, Next.js (landing page)</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Vera</strong> &mdash; menstrual cycle forecasting</span>
+    <span class="when"><span class="tag">Google Play</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> play.google.com/store/apps/details?id=com.nelson.vera.mobile</div>
+  <ul>
+    <li>Predicts and tracks menstrual cycles from user-logged history, fully on-device.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> Kotlin, Android</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Lontra Ágil</strong> &mdash; AI study companion for <em>concursos públicos</em></span>
+    <span class="when"><span class="tag">Google Play</span> &nbsp;2025 &ndash; 2026</span>
+  </div>
+  <div class="proj-meta">Team project <span class="sep">♦</span> Mobile app lead <span class="sep">♦</span> play.google.com/store/apps/details?id=com.nllsn.pubconapp</div>
+  <ul>
+    <li>Imports public-exam PDFs, uses <strong>Gemini Flash</strong> to parse them and auto-generates practice questions for students preparing for public-sector entrance exams.</li>
+    <li>Built the <strong>Expo development-build</strong> mobile app and the first T3 web version; the platform was later rebuilt as a Turborepo monorepo.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, React Native (Expo), Next.js, tRPC, Prisma, Gemini Flash API</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>NLSN Meditate</strong> &mdash; guided meditation with progress and leaderboards</span>
+    <span class="when">2026</span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> Android</div>
+  <ul>
+    <li>Guided meditations, a lesson library on meditation and its science, streaks and badges, wired to <strong>Google Play Games</strong> achievements and leaderboards.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, React Native (Expo), EAS, Google Play Games Services</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>AI &amp; Agents</h2>
+<p class="section-intro">LLM-powered tools &mdash; from cloud agents to models running entirely in the browser.</p>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>CNPJ Discovery</strong> &mdash; B2B lead qualification from Brazilian open data</span>
+    <span class="when">2026 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> github.com/gitnlsn/cnpj-discovery</div>
+  <ul>
+    <li>Turns an ideal-customer profile into qualified leads: an <strong>LLM suggests target CNAE codes</strong>, the app filters every active company in the Receita Federal dataset, crawls their websites and scores them against a compiled rubric.</li>
+    <li>Streams the monthly <strong>2.9 GB</strong> public dump through an in-flight filter into <strong>Parquet + DuckDB</strong> &mdash; rows that fail the filter never touch disk; runs at <strong>R$&nbsp;0</strong> using free Gemini/OpenRouter tiers.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Next.js, DuckDB, Parquet, Gemini / OpenRouter, pnpm workspaces</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Viva Voz</strong> &mdash; read-aloud practice for French and Spanish</span>
+    <span class="when">2026 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> github.com/gitnlsn/language-practice</div>
+  <ul>
+    <li>Generates CEFR-levelled sentences with Chrome&rsquo;s built-in <strong>Gemini Nano (Prompt API)</strong>, translates with the <strong>Translator API</strong> and reads them with <strong>Kokoro-82M</strong> on WebGPU &mdash; no backend and no API keys.</li>
+    <li>Compiled <strong>eSpeak NG to WASM</strong> for French/Spanish phonemization; history and saved sentences persist in IndexedDB; printable handwriting sheets.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Vite, Chrome Built-in AI, kokoro-js, ONNX / WebGPU, WASM</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Ms. Ada</strong> &mdash; speech-to-speech English tutor in the browser</span>
+    <span class="when">2026</span>
+  </div>
+  <div class="proj-meta">Solo</div>
+  <ul>
+    <li>Spoken classes organized by topic: listens with the Web Speech API, answers and corrects with <strong>Gemini Nano</strong> or <strong>WebLLM</strong> (Llama 3.2 / Qwen 2.5 on WebGPU) behind a common provider interface.</li>
+    <li>Zero running cost and fully private &mdash; static prerendered site, conversations never leave the machine; detects unsupported browsers before offering a 2 GB model download.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Next.js, WebLLM, Chrome Prompt API, Web Speech API</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Lumière</strong> &mdash; English lessons by phone with an AI teacher</span>
+    <span class="when">2025</span>
+  </div>
+  <div class="proj-meta">Solo</div>
+  <ul>
+    <li>Scheduled 60-minute phone conversations with an emotionally-aware AI tutor, with Google Calendar scheduling, per-lesson payments, transcripts and pronunciation scoring.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Next.js 15, Hume AI (EVI), Twilio, Tailwind CSS</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Tucano Typing</strong> &mdash; typing practice with AI-generated text</span>
+    <span class="when">2025 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> github.com/gitnlsn/tucano-typing</div>
+  <ul>
+    <li>Captures every keystroke with timestamps to compute WPM and accuracy, finds commonly mistyped words and generates personalized practice text; public/private scoreboards.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Next.js, tRPC, Prisma, NextAuth, LLM text generation</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Full-Stack Platforms</h2>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Savoir Link</strong> &mdash; local-services marketplace with payments and payouts</span>
+    <span class="when">2025 &ndash; 2026 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> github.com/gitnlsn/nlsn-services-marketplace</div>
+  <ul>
+    <li>Customers discover a provider, book, chat in real time and pay by card or <strong>Pix</strong>; providers manage catalog, availability and withdrawals. Booking lifecycle modeled as a <strong>state machine</strong> with review gates.</li>
+    <li><strong>Pagar.me</strong> webhooks, refunds and KYC-verified provider payouts; <strong>Ably</strong> messaging; 26-model Prisma schema; <strong>109 test files</strong> across unit, integration and Playwright E2E.</li>
+    <li>Follow-up <strong>reverse-marketplace</strong> variant (leads model): customers pay to post an order, providers buy credits to unlock contacts.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript (strict), Next.js 15, React 19, tRPC v11, Prisma, PostgreSQL, NextAuth v5, Pagar.me, Ably, Resend, Vitest, Playwright</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Pulse FX</strong> &mdash; BRL exchange-rate and macro indicators dashboard</span>
+    <span class="when">2026 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Technical challenge <span class="sep">♦</span> github.com/gitnlsn/pulse-fx</div>
+  <ul>
+    <li>Syncs public data from the <strong>Central Bank of Brazil</strong> (PTAX/SGS) and <strong>FRED</strong> into Postgres and serves it through its own API and a React SPA.</li>
+    <li>Layered <strong>SOLID</strong> backend (routes &rarr; controllers &rarr; services &rarr; repositories); data sources behind a Strategy/Adapter interface; one shared package holds DTOs and the variation rule used by both web and API.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, Fastify, Prisma, PostgreSQL, Vite, React, Zod, Docker Compose</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Engineering &amp; Systems</h2>
+<p class="section-intro">Projects where the interesting part is the engine underneath.</p>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>FEA Online</strong> &mdash; finite-element analysis in the browser</span>
+    <span class="when">2026 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> github.com/gitnlsn/fea-online</div>
+  <ul>
+    <li>Draw a geometry, mesh it and solve on it &mdash; all client-side. The mesher and a <strong>discontinuous Galerkin solver</strong> are written in <strong>Rust</strong> and compiled to <strong>WebAssembly</strong>, running in a Web Worker.</li>
+    <li>Solves steady heat diffusion with per-edge boundary conditions (plotted in 2D or as a 3D surface) and <strong>transient compressible Euler</strong> &mdash; shock waves reflecting and diffracting around the drawn geometry.</li>
+    <li>The mesher, <strong>nlsn-delaunay-refine</strong> (constrained Delaunay triangulation and refinement), is published separately on <strong>crates.io</strong>.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> Rust, WebAssembly (wasm-bindgen), TypeScript, Next.js, Web Workers, Canvas</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Eleven Deep</strong> &mdash; football management simulation</span>
+    <span class="when">2026 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> github.com/gitnlsn/game-1</div>
+  <ul>
+    <li>Simulation engine as a <strong>pure TypeScript package</strong> (world generation, match engine, league, economy) that runs identically in a CLI tuning harness and on-device.</li>
+    <li>Match engine <strong>calibrated against real benchmarks</strong> across 40-season runs, with a calibration check that fails the build on drift; <strong>284 tests</strong>.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, React Native (Expo), React Navigation, Vitest</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>TEA App</strong> &mdash; evidence-based activities for autistic children</span>
+    <span class="when">2026</span>
+  </div>
+  <div class="proj-meta">Solo</div>
+  <ul>
+    <li>Offline activity library for a child and a supporting adult, where every design decision traces to a paper: built from a corpus of <strong>67 open-access studies</strong>, each activity carries an in-app card stating the evidence and its caveats.</li>
+    <li>Ten activities (emotion recognition, routines, cooperative play, rhythm via accelerometer, pattern reasoning&hellip;) plus a sensory profile that configures the whole app; automated checks for contrast, offline-safety and navigation, <strong>118 tests</strong>.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, React Native (Expo), Jest</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Time-Off Microservice</strong> &mdash; balance integrity against an external HCM</span>
+    <span class="when">2026 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Technical challenge <span class="sep">♦</span> github.com/gitnlsn/wizdaa-time-off</div>
+  <ul>
+    <li>Request lifecycle, local balance cache with a <strong>total / reserved / deducted</strong> model, and a sync engine that detects drift from the HCM and flags affected requests for revalidation; <code>BEGIN IMMEDIATE</code> transactions prevent double-booking.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, NestJS 11, SQLite, Jest, Supertest</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Lead Management &amp; AI Classification</strong> &mdash; async backend</span>
+    <span class="when">2026 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Technical challenge <span class="sep">♦</span> github.com/gitnlsn/quark-backend_challenge</div>
+  <ul>
+    <li>Leads enriched through an external API and classified by a local LLM (<strong>Ollama</strong>), with the work processed asynchronously through <strong>RabbitMQ</strong>; full stack brought up by Docker Compose.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> TypeScript, NestJS 11, Prisma, PostgreSQL, RabbitMQ, Ollama, Vitest, Docker</div>
+</div>
+
+<div class="proj">
+  <div class="proj-head">
+    <span class="title"><strong>Network &amp; camera security monitors</strong></span>
+    <span class="when">2025 &nbsp;<span class="tag">Open source</span></span>
+  </div>
+  <div class="proj-meta">Solo <span class="sep">♦</span> github.com/gitnlsn/veillle-shell</div>
+  <ul>
+    <li><strong>PCAP Monitor</strong>: Go packet capture detecting DNS hijacking and SSL stripping, multi-path verification over VPN/Tor/proxy routes, plus a Python deception engine and Dockerized honeypot.</li>
+    <li><strong>Roof Camera Monitor</strong>: Go service holding redundant RTSP connections, comparing audio fingerprints across streams to detect tampering, auto-failover on stalls and YouTube upload of anomalous segments; live TUI dashboard.</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> Go, Python, Docker, ffmpeg, YouTube Data API</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Collaborations &amp; Smaller Builds</h2>
+
+<div class="mini-grid">
+  <div class="mini">
+    <span class="name"><strong>Animalesko</strong> &mdash; pet adoption &amp; services platform</span>
+    Consumer app, provider back-office and landing page sharing one Postgres, tRPC API and design system. Team project, contributor.
+    <div class="stack">Next.js, Expo, tRPC, Prisma, Better Auth, Turborepo</div>
+  </div>
+  <div class="mini">
+    <span class="name"><strong>Benevolus</strong> &mdash; zero-fee donation platform</span>
+    Open-source charity campaign platform with Pix and Stripe Connect payments. Contributor.
+    <div class="stack">Laravel, Next.js, HeroUI, Woovi, Stripe, Terraform, AWS</div>
+  </div>
+  <div class="mini">
+    <span class="name"><strong>Sevenpass</strong> &mdash; ticketing marketplace for experiences</span>
+    Search, listings and secure ticket checkout for events and festivals. Contributor.
+    <div class="stack">Next.js, tRPC, Prisma, NextAuth, PlanetScale, Upstash Redis</div>
+  </div>
+  <div class="mini">
+    <span class="name"><strong>Neo-news</strong> &mdash; classifieds platform</span>
+    Create, manage and search listings with Google sign-in.
+    <div class="stack">Next.js, tRPC, Prisma, Drizzle, NextAuth</div>
+  </div>
+  <div class="mini">
+    <span class="name"><strong>Gesture Controller</strong> &mdash; webcam slide navigator</span>
+    Hand-gesture recognition in the browser to drive a slide deck hands-free.
+    <div class="stack">Next.js, MediaPipe</div>
+  </div>
+  <div class="mini">
+    <span class="name"><strong>Twitch Stream JS</strong> &mdash; interactive stream games</span>
+    Chess and trivia rendered server-side and streamed live via native ffmpeg.
+    <div class="stack">Node.js, TypeScript, ffmpeg</div>
+  </div>
+  <div class="mini">
+    <span class="name"><strong>Google Maps Crawler</strong> &mdash; place data extraction CLI</span>
+    Searches places, scrolls results and extracts ratings, reviews and addresses.
+    <div class="stack">TypeScript, Puppeteer, yargs</div>
+  </div>
+  <div class="mini">
+    <span class="name"><strong>Client websites</strong> &mdash; institutional sites &amp; landing pages</span>
+    Sites for a Tibetan Buddhist temple, a home-décor studio, an online meditation course, a mindset program and the Voile Drift launch.
+    <div class="stack">Next.js, Tailwind CSS, Vercel</div>
+  </div>
+</div>
+
+</body>
+</html>

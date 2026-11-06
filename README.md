@@ -1,22 +1,33 @@
 # CV
 
-Source files and PDF generator for Nelson Kenzo Tamashiro's CV.
+Source files and PDF generator for Nelson Kenzo Tamashiro's CV and project portfolio.
 
 ## Files
 
 - `CV.md` — Markdown source (human-editable, for content review).
 - `index.html` — Styled HTML used to render the PDF. **Edit this for visual/content changes that ship in the PDF.**
 - `CV.pdf` — Generated output. Do not edit by hand — it's overwritten on every build.
-- `generate-pdf.js` — Puppeteer script that renders `index.html` → `CV.pdf` (Letter, 0.6in × 0.7in margins, backgrounds enabled).
+- `portfolio.html` — Printable project portfolio, same visual pattern as the CV. Rendered to `Portfolio.pdf`.
+- `Portfolio.pdf` — Generated output.
+- `portfolio/` — Separate web version of the portfolio (not part of the PDF build).
+- `generate-pdf.js` — Puppeteer script that renders `index.html` → `CV.pdf` and `portfolio.html` → `Portfolio.pdf` (Letter, 0.6in × 0.7in margins, backgrounds enabled).
 
 ## Generate the PDF
 
 ```bash
 npm install        # first time only
-npm run generate   # writes ./CV.pdf
+npm run generate             # writes ./CV.pdf and ./Portfolio.pdf
+npm run generate:cv          # CV only
+npm run generate:portfolio   # portfolio only
 ```
 
-The script launches a headless Chromium via Puppeteer, loads `index.html` from the filesystem, waits for network idle, and prints to PDF. Output path: `./CV.pdf`.
+The script launches a headless Chromium via Puppeteer, loads `index.html` from the filesystem, waits for network idle, and prints to PDF. Output paths: `./CV.pdf`, `./Portfolio.pdf`.
+
+If Puppeteer reports it can't find Chrome, either run `npx puppeteer browsers install chrome` once, or point it at your installed Chrome:
+
+```bash
+PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" npm run generate
+```
 
 ## Editing workflow
 
