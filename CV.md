@@ -26,7 +26,7 @@ Full Stack Developer with 6+ years of experience designing, coding, testing, deb
 - **Cloud & DevOps:** Docker, CI/CD (GitHub Actions, Azure Pipelines), AWS (Lambda, SQS, SNS, S3), Git, GitHub, Vercel
 - **Observability:** Sentry, PostHog, structured logging, metrics & dashboards
 - **Data:** PostgreSQL, MySQL
-- **AI:** Gemini Flash, LangChain, Vercel AI SDK, Mastra, retell.ai, LLM-based agents, business-automation agents
+- **AI:** Gemini Flash, LangChain, Vercel AI SDK, Mastra, retell.ai, LLM-based agents, voice (speech-to-speech) agents, agent tool calling, business-automation agents
 - **Testing:** Jest, Vitest, unit & integration testing, test-driven development
 - **Practices:** SOLID, Clean Code, refactoring, debugging, code review, Agile/Scrum
 
@@ -35,19 +35,19 @@ Full Stack Developer with 6+ years of experience designing, coding, testing, deb
 ## Professional Experience
 
 ### HubXP — Full Stack Developer
-*Jul 2025 – Present · Remote*
+*Jul 2025 – Nov 2026 · Remote*
 
-- Refactored **~8,000 lines** of legacy code — applying **SOLID and Clean Code** principles to replace buggy, hard-to-test modules with typed, testable units — **reducing recurring production defects by ~45%** and **lifting unit-test coverage from ~30% to ~75%** in the touched modules.
+- Contributed to **Afya Intelligence**, an AI learning platform for medical students at Afya: built a **speech-to-speech AI agent that simulates OSCE (Objective Structured Clinical Examination) patient interviews** so students can practice clinical interviewing by voice, plus a **multi-field CRUD form** for configuring each virtual patient; and a **real-time speech-to-speech tutor agent** with working **tool calls** that answers students' questions by querying Afya's **Whitebook** clinical-reference database.
 - Designed and shipped **AI agent integrations** powering HubXP's flagship product, embedding **Gemini Flash** workflows via **Vercel AI SDK** / **Mastra** into existing client-facing features across web and mobile clients — **cutting ~6 hours/week** of manual operator work per client.
 - Built and maintained a **Python** repository housing a **LangChain** agent supporting HubXP's AI workflows.
 - Owned features end-to-end across the stack: **Next.js** + React frontends, **tRPC** + **Prisma** backend, and a shared **React Native** mobile app — type safety enforced from database schema through to UI.
-- Authored **technical documentation** for refactored modules and AI-agent integration points to accelerate onboarding for new engineers.
+- Authored **technical documentation** for AI-agent integration points to accelerate onboarding for new engineers.
 - **Stack:** TypeScript, React, Next.js, tRPC, Prisma, React Native, Mastra, Vercel AI SDK, Gemini Flash, Python, LangChain, Vercel, Vitest, Agile/Scrum
 
 ### FutureSecureAi — Full Stack Developer
 *Feb 2025 – Jul 2025 · Remote*
 
-- Engineered **5 production AI agents** automating human-staffed workflows for FutureSecureAi's commercial agent platform — including **Jack**, a voice-based interview agent (**retell.ai**) designed to conduct phone screenings for open job positions and take on the *triagem* (screening) step of the hiring funnel, **handling 200+ screenings/month** at peak.
+- Engineered **Jack**, a production voice-based interview agent (**retell.ai**) for FutureSecureAi's commercial agent platform, automating a human-staffed workflow — designed to conduct phone screenings for open job positions and take on the *triagem* (screening) step of the hiring funnel, **handling 200+ screenings/month** at peak.
 - Onboarded into a large, unfamiliar legacy codebase and integrated **8+ third-party APIs** — extending capability without destabilizing existing flows; debugged and resolved cross-system issues end-to-end.
 - Collaborated across engineering to scope work with development managers, pair on hard problems, and unblock peers through code review and pair programming.
 - **Stack:** TypeScript, Node.js, LangChain, Vercel AI SDK, Mastra, retell.ai, Gemini Flash, third-party API integrations
@@ -58,7 +58,8 @@ Full Stack Developer with 6+ years of experience designing, coding, testing, deb
 - Delivered **Toki** — a SaaS for construction and renovation companies to organize project data, media, and billing — owning end-to-end work across web (Next.js) and mobile (React Native), with **tRPC** providing type-safe contracts between clients and server; **integrated the Iugu payment gateway** for in-app billing. Onboarded **200+ companies**, with **1,000+ React Native installs** in production.
 - Launched **Zuppy** — **financial/fiscal-domain software** for issuing Brazilian electronic invoices (*nota fiscal*) for high-volume digital-product sellers (*infoprodutores*) — integrating with the **plugnotas** billing provider to emit invoices reliably at scale. **Optimized the nota fiscal search SQL query, cutting response time from ~2 minutes to ~3 seconds (~40× faster)** on a database that has surpassed **1M nota fiscal records**; instrumented the product with **Sentry** (error tracking) and **PostHog** (product analytics) for observability.
 - Contributed to **WePink**, an e-commerce platform for a cosmetics retailer serving **millions of customers** — led integration tests covering **campaign + multi-discount logic**, hardening a critical **payment/revenue path** the client specifically thanked the team for.
-- Maintained and extended the shared **Next.js + tRPC + Prisma** platform underpinning all three products, applying **SOLID and Clean Code** and managing shared client state with the **Context API** across web and mobile; deployed on **Vercel** via **CI/CD**, balancing per-product delivery with cross-cutting platform improvements.
+- Refactored **~8,000 lines** of legacy code — applying **SOLID and Clean Code** principles to replace buggy, hard-to-test modules with typed, testable units — **reducing recurring production defects by ~45%** and **lifting unit-test coverage from ~30% to ~75%** in the touched modules.
+- Maintained and extended the shared **Next.js + tRPC + Prisma** platform underpinning all three products, managing shared client state with the **Context API** across web and mobile; deployed on **Vercel** via **CI/CD**, balancing per-product delivery with cross-cutting platform improvements.
 - **Stack:** TypeScript, React, Next.js, React Native, tRPC, Prisma, Vercel, Jest, Vitest, Agile/Scrum
 
 ### ACT Digital — Full Stack Developer
