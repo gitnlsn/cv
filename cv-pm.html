@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nelson Kenzo Tamashiro — CV (Product)</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 0.55in 0.7in;
+  }
+  :root {
+    --accent: #a3341a;
+    --ink: #1f2328;
+    --muted: #555;
+    --bar-empty: #d8d8d8;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", "Times", serif;
+    font-size: 10pt;
+    line-height: 1.4;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Header block */
+  .header {
+    text-align: center;
+    padding: 8px 0 12px 0;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 23pt;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    margin: 6px 0 4px 0;
+  }
+  .role-line {
+    font-size: 12pt;
+    color: var(--accent);
+    font-variant: small-caps;
+    letter-spacing: 1.5px;
+    margin: 0;
+  }
+  .contact {
+    font-size: 10pt;
+    color: var(--ink);
+    text-align: center;
+    margin: 0 0 8px 0;
+  }
+  .contact .sep {
+    color: var(--accent);
+    margin: 0 8px;
+  }
+
+  /* Section headings: centered small-caps flanked by horizontal rules */
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 11.5pt;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin: 14px 0 8px 0;
+  }
+  h2::before,
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  /* Work history entries */
+  .role-head {
+    font-size: 10.5pt;
+    margin: 8px 0 0 0;
+  }
+  .company {
+    font-size: 10.5pt;
+    margin: 0 0 2px 0;
+  }
+
+  /* Education entry */
+  .edu-degree {
+    font-size: 10.5pt;
+    margin: 4px 0 0 0;
+  }
+  .edu-school {
+    font-size: 10.5pt;
+    margin: 0 0 2px 0;
+  }
+
+  /* Career-break meta */
+  .meta {
+    font-size: 10pt;
+    color: var(--muted);
+    font-style: italic;
+    margin: 2px 0 4px 0;
+  }
+
+  /* Lists */
+  ul {
+    margin: 4px 0 6px 0;
+    padding-left: 18px;
+  }
+  li {
+    margin-bottom: 3px;
+  }
+
+  /* Two-column grid for Skills and Languages */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 32px;
+    margin: 4px 0 6px 0;
+  }
+  .grid-2 .cell {
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+  .grid-2 .cell strong { color: var(--ink); }
+
+  /* Skills section: 4-column grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 18px;
+    margin: 4px 0 6px 0;
+  }
+  .skills-grid .cell .category {
+    display: block;
+    font-weight: bold;
+    color: var(--ink);
+    margin-bottom: 3px;
+    font-size: 9.8pt;
+  }
+  .skills-grid .cell .skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    font-size: 9pt;
+    line-height: 1.35;
+  }
+  .skills-grid .cell .skill-row .name {
+    flex: 0 1 auto;
+  }
+
+  /* Skill proficiency bars (pure CSS, 5 segments) */
+  .bar {
+    display: inline-flex;
+    gap: 1px;
+    vertical-align: middle;
+    flex: 0 0 auto;
+  }
+  .bar i {
+    display: inline-block;
+    width: 6px;
+    height: 3px;
+    background: var(--bar-empty);
+  }
+  .bar[data-level="1"] i:nth-child(-n+1),
+  .bar[data-level="2"] i:nth-child(-n+2),
+  .bar[data-level="3"] i:nth-child(-n+3),
+  .bar[data-level="4"] i:nth-child(-n+4),
+  .bar[data-level="5"] i:nth-child(-n+5) {
+    background: var(--accent);
+  }
+
+  /* Summary paragraph */
+  .summary {
+    margin: 0;
+    text-align: justify;
+  }
+
+  /* Stack lines under each role */
+  .stack { color: var(--muted); }
+  .stack strong { color: var(--ink); }
+
+  /* Links: plain text style (template uses unformatted URLs) */
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  html, body { font-size: 9.6pt; line-height: 1.36; }
+  h2 { margin: 11px 0 6px 0; }
+  li { margin-bottom: 2px; }
+  .role-head { margin-top: 6px; }
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px 22px;
+    margin: 4px 0 6px 0;
+    font-size: 9.6pt;
+    line-height: 1.4;
+  }
+  .comp-grid .category {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Nelson Kenzo Tamashiro</h1>
+  <div class="role-line">Technical Product Manager · AI &amp; SaaS Products</div>
+</div>
+
+<div class="contact">
+  São Paulo, Brazil <span class="sep">♦</span> +55 (11) 97515-3417 <span class="sep">♦</span> nelsonkenzotamashiro@gmail.com
+</div>
+
+<div class="contact">
+  linkedin.com/in/nelson-kenzo-tamashiro <span class="sep">♦</span> github.com/gitnlsn <span class="sep">♦</span> play.google.com/store/apps/developer?id=nelson+kenzo+tamashiro
+</div>
+
+<h2>Professional Summary</h2>
+<p class="summary">
+  Product-minded engineer transitioning into <strong>Product Management</strong>, with 6+ years taking <strong>B2B SaaS, healthcare, fiscal/payments, and AI products</strong> from idea to production and adoption. Has owned products end-to-end &mdash; scoping with stakeholders, delivering across web and mobile, and instrumenting usage with <strong>product analytics</strong> &mdash; including <strong>Toki</strong> (<strong>200+ companies onboarded</strong>, <strong>1,000+ mobile installs</strong>) and <strong>Zuppy</strong> (electronic-invoicing platform past <strong>1M invoice records</strong>). Recently focused on <strong>AI-agent products</strong> that replace manual workflows: a voice screening agent handling <strong>200+ interviews/month</strong>, automations saving <strong>~6 hours/week per client</strong>, and voice-based learning tools for medical students. Brings the technical depth to turn business problems into feasible scope, negotiate trade-offs credibly with engineering, and judge what AI can realistically deliver. Currently pursuing an <strong>MBA in Applied AI</strong>.
+</p>
+
+<h2>Core Competencies</h2>
+<div class="comp-grid">
+  <div class="cell">
+    <span class="category">Product</span>
+    End-to-end product ownership · 0&rarr;1 launches · scoping &amp; prioritization with stakeholders · turning user feedback into iterations · product analytics (PostHog)
+  </div>
+  <div class="cell">
+    <span class="category">Delivery</span>
+    Agile/Scrum (30+ sprints) · sprint planning · cross-functional work with engineering, QA &amp; clients · technical documentation · quality &amp; risk reduction on critical paths
+  </div>
+  <div class="cell">
+    <span class="category">AI Products</span>
+    LLM &amp; voice (speech-to-speech) agents · workflow automation · agent tool calling · AI feasibility assessment · Gemini, Vercel AI SDK, Mastra, LangChain, retell.ai
+  </div>
+  <div class="cell">
+    <span class="category">Domains</span>
+    B2B SaaS · Healthcare &amp; health-education · Fiscal / electronic invoicing · Payments (Iugu) · E-commerce · HR-tech (recruiting)
+  </div>
+  <div class="cell">
+    <span class="category">Technical Fluency</span>
+    TypeScript, React, Next.js, React Native, Node.js · PostgreSQL / SQL · APIs &amp; integrations (8+ third-party) · AWS, Docker, CI/CD
+  </div>
+  <div class="cell">
+    <span class="category">Monitoring &amp; Quality</span>
+    Sentry (error tracking) · PostHog (usage) · test strategy for revenue-critical flows · defect reduction
+  </div>
+</div>
+
+<h2>Work History</h2>
+
+<div class="role-head"><strong>Full Stack Developer</strong>, 07/2025 - 11/2026 · Remote</div>
+<div class="company"><strong>HubXP</strong></div>
+<ul>
+  <li><strong>Afya Intelligence</strong> (client: Afya, medical education): built two voice-first learning products for medical students &mdash; an <strong>AI patient simulator for OSCE clinical-exam practice</strong>, with a configuration form that lets educators define each virtual patient, and a <strong>real-time voice tutor</strong> that answers students&rsquo; questions using Afya&rsquo;s <strong>Whitebook</strong> clinical-reference content.</li>
+  <li>Shipped <strong>AI-agent automations</strong> into HubXP&rsquo;s flagship product across web and mobile, <strong>removing ~6 hours/week of manual operator work per client</strong>.</li>
+  <li>Owned features end-to-end, from understanding the client need to production release across web, backend, and mobile; wrote <strong>documentation</strong> for the AI-agent integration points to speed up onboarding of new engineers.</li>
+  <li class="stack"><strong>Tech:</strong> Next.js, React Native, tRPC, Prisma, Vercel AI SDK, Mastra, Gemini Flash, Python, LangChain</li>
+</ul>
+
+<div class="role-head"><strong>Full Stack Developer</strong>, 02/2025 - 07/2025 · Remote</div>
+<div class="company"><strong>FutureSecureAi</strong></div>
+<ul>
+  <li>Built <strong>Jack</strong>, a production <strong>voice AI agent</strong> that automated the candidate-screening (<em>triagem</em>) step of the hiring funnel &mdash; a previously human-staffed workflow &mdash; conducting <strong>200+ phone screenings/month</strong> at peak.</li>
+  <li>Scoped work with development managers and integrated <strong>8+ third-party APIs</strong> into a large legacy platform without destabilizing existing customer flows.</li>
+  <li class="stack"><strong>Tech:</strong> TypeScript, Node.js, retell.ai, LangChain, Vercel AI SDK, Mastra, Gemini Flash, MongoDB</li>
+</ul>
+
+<div class="role-head"><strong>Full Stack Developer</strong>, 11/2023 - 02/2025 · Remote</div>
+<div class="company"><strong>HubXP</strong></div>
+<ul>
+  <li><strong>Toki</strong> &mdash; SaaS for construction and renovation companies to organize project data, media, and billing: owned delivery end-to-end across web and mobile, including <strong>in-app billing via the Iugu payment gateway</strong>. Reached <strong>200+ companies onboarded</strong> and <strong>1,000+ mobile installs</strong>.</li>
+  <li><strong>Zuppy</strong> &mdash; launched an electronic-invoicing (<em>nota fiscal</em>) product for high-volume digital-product sellers, integrated with the plugnotas provider. Cut <strong>invoice search time from ~2 minutes to ~3 seconds (~40&times;)</strong> on <strong>1M+ invoice records</strong>; set up <strong>PostHog product analytics</strong> and <strong>Sentry</strong> to track usage and errors; built an <strong>AI onboarding chatbot</strong> that guided new customers through account setup.</li>
+  <li><strong>WePink</strong> (cosmetics e-commerce, <strong>millions of customers</strong>): led test coverage for <strong>campaign and multi-discount logic</strong> on the revenue path &mdash; work the client specifically recognized.</li>
+  <li>Refactored ~8,000 lines of buggy legacy code, <strong>cutting recurring production defects by ~45%</strong> and raising test coverage from ~30% to ~75% in the affected modules.</li>
+  <li class="stack"><strong>Tech:</strong> Next.js, React Native, tRPC, Prisma, PostgreSQL, Vercel, PostHog, Sentry</li>
+</ul>
+
+<div class="role-head"><strong>Full Stack Developer</strong>, 10/2021 - 04/2023 · Remote</div>
+<div class="company"><strong>ACT Digital</strong></div>
+<ul>
+  <li>Member of a 4&ndash;6-engineer team building the <strong>scheduling system for Hospital Israelita Albert Einstein</strong>, handling <strong>~10M appointment and exam bookings/month</strong> for patients and clinical staff.</li>
+  <li>Delivered <strong>40+ scheduling features/components</strong> over <strong>30+ two-week sprints</strong>, participating in sprint planning and working closely with product and QA.</li>
+  <li>Reviewed <strong>user feedback</strong> and turned it into iterative improvements to the booking experience.</li>
+  <li class="stack"><strong>Tech:</strong> React, Redux, NestJS, Prisma, MySQL, RabbitMQ, AWS SQS/SNS, Docker</li>
+</ul>
+
+<div class="role-head"><strong>Full Stack Developer</strong>, 04/2019 - 03/2020 · Remote</div>
+<div class="company"><strong>Quality24</strong></div>
+<ul>
+  <li>Built Android screens for a <strong>bedside hospitalization-attendance product</strong> used in clinical workflows, shipped to a <strong>100-device pilot</strong> with a healthcare provider.</li>
+  <li>Raised backend test coverage to <strong>~80%</strong> (150+ tests), reducing regression risk as new features shipped.</li>
+</ul>
+
+<h2>Product Projects</h2>
+<div class="role-head"><strong>Lontra Ágil</strong> &mdash; AI study companion for Brazilian public exams · In development, team project</div>
+<ul>
+  <li>Covering <strong>product definition</strong>, the content-ingestion pipeline, and the AI evaluation loop for a platform that turns public-exam PDFs into auto-generated practice questions.</li>
+</ul>
+<div class="role-head"><strong>Voile Drift</strong> &amp; <strong>Vera</strong> &mdash; Android apps published on Google Play</div>
+<ul>
+  <li>Conceived, built, and published solo: an <strong>AI calendar-insights app</strong> (Gemini Flash finds relationships between logged events) and a <strong>menstrual-cycle forecasting app</strong>.</li>
+</ul>
+
+<h2>Education &amp; Languages</h2>
+<div class="edu-degree"><strong>MBA in Applied AI Engineering</strong>, 06/2026 - 05/2027</div>
+<div class="edu-school"><strong>UNIPDS - Anhanguera</strong></div>
+<ul>
+  <li>Applied AI, prompt engineering, generative-AI tooling, and neural networks for user-behavior prediction.</li>
+</ul>
+<div class="edu-degree"><strong>Mechatronics Engineering</strong>, 01/2013 - 12/2018</div>
+<div class="edu-school"><strong>Universidade de São Paulo</strong></div>
+<ul>
+  <li>Research scholarships: <strong>FAPESP</strong> (numerical simulation) and <strong>PIBIC</strong> (probabilistic analysis of critical systems).</li>
+</ul>
+
+<ul>
+  <li><strong>Languages:</strong> Portuguese (native) · English (advanced) · French (intermediate) &nbsp;|&nbsp; <strong>Career break</strong> (04/2020&ndash;09/2021): full-time family caregiver.</li>
+</ul>
+
+</body>
+</html>

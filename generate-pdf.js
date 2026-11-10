@@ -7,6 +7,7 @@ const puppeteer = require("puppeteer");
 const TARGETS = {
   cv: { html: "index.html", pdf: "CV.pdf" },
   portfolio: { html: "portfolio.html", pdf: "Portfolio.pdf" },
+  pm: { html: "cv-pm.html", pdf: "CV-PM.pdf" },
 };
 
 async function main() {

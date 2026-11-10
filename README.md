@@ -7,6 +7,7 @@ Source files and PDF generator for Nelson Kenzo Tamashiro's CV and project portf
 - `CV.md` — Markdown source (human-editable, for content review).
 - `index.html` — Styled HTML used to render the PDF. **Edit this for visual/content changes that ship in the PDF.**
 - `CV.pdf` — Generated output. Do not edit by hand — it's overwritten on every build.
+- `cv-pm.html` — Product Management–targeted CV (same template, PM framing). Rendered to `CV-PM.pdf` via `node generate-pdf.js pm`.
 - `portfolio.html` — Printable project portfolio, same visual pattern as the CV. Rendered to `Portfolio.pdf`.
 - `Portfolio.pdf` — Generated output.
 - `portfolio/` — Separate web version of the portfolio (not part of the PDF build).
